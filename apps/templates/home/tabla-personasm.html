@@ -1,0 +1,116 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Personas Guardadas {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+  <div class="d-block mb-4 mb-md-0">
+      <h2 class="h4">Lista de Usuarios</h2>
+      <p class="mb-0">Listado de Personas Registradas</p>
+  </div>
+  <div class="btn-toolbar mb-2 mb-md-0">
+      <a href="/registro-p-moral.html" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
+          <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+          Nuevo Usuario
+      </a>
+  </div>
+</div>
+
+<div class="table-settings mb-4">
+  <div class="row justify-content-between align-items-center">
+      <div class="col-9 col-lg-8 d-md-flex">
+          <div class="input-group me-2 me-lg-3 fmxw-300">
+              <span class="input-group-text">
+                  <svg class="icon icon-xs" x-description="Heroicon name: solid/search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                  </svg>
+              </span>
+              <input type="text" class="form-control" placeholder="Buscar Usuarios ID">
+          </div>
+          <select class="form-select fmxw-200 d-none d-md-inline" aria-label="Message select example 2">
+              <option selected>Todos</option>
+              <option value="1">Persona Moral</option>
+              <option value="2">Persona Física</option>
+          </select>
+      </div>
+  </div>
+</div>
+
+    <table class="table user-table table-hover align-items-center">
+        <thead class="thead-light">
+            <tr>
+                <th class="border-bottom"></th>
+                <th class="border-bottom">Nombre</th>						
+                <th class="border-bottom">Fecha de Registro</th>
+                <th class="border-bottom">Tipo de Persona</th>
+                <th class="border-bottom">Estatus</th>
+                <th class="border-bottom">Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for persona in personas %}
+            <tr>
+                <td>
+                    <div class="form-check dashboard-check">
+                        <input class="form-check-input" type="checkbox" value="" id="userCheck1">
+                        <label class="form-check-label" for="userCheck1">
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <a href="#" class="d-flex align-items-center">
+                        <div class="d-block">
+                            <span class="fw-bold">{{persona.nombre}} {{persona.nombre1}}</span>
+                            <div class="small text-gray">{{persona.email}}</div>
+                        </div>
+                    </a>
+                </td>
+                <td><span class="fw-normal">10 Feb 2020</span></td>                        
+                <td>
+                    <span class="fw-normal d-flex align-items-center">
+                        {{persona.email}}
+                    </span>
+                </td>
+                <td><span class="fw-normal text-success">Active</span></td>
+                <td>
+                    <div class="btn-group">
+                        <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                            <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
+                            <a class="dropdown-item d-flex align-items-center" href="editarpm/{{persona.id}}">
+                                <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
+                                Edit Info
+                            </a>                        
+                        </div>
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg class="icon icon-xs text-danger ms-1" title="Delete" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg><span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
+                            <a class="dropdown-item d-flex align-items-center" href="removerpm/{{persona.id}}">
+                                <svg class="icon icon-xs text-danger ms-1" title="Delete" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
+                                Delete Info
+                            </a>                        
+                        </div>
+                    </div>
+                    
+                </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+{% endblock javascripts %}

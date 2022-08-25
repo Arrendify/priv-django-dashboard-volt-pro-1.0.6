@@ -1,0 +1,178 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Registro Persona Moral {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content%}
+<div class="row">
+    <div class="col-12 col-xl">
+        <div class="card card-body border-0 shadow mb-4">
+            <div class="row">
+                <h2 class="h5 mb-4">Ingresa Datos Del Fiador</h2>
+                    <div class="col-md-3 mb-3">                        
+                            <label for="first_name">Primer Nombre</label>
+                            <input class="form-control" id="first_name" type="text" placeholder="Ingresa tu Primer Nombre Fiador" >                            
+                    </div>
+                    <div class="col-md-3 mb-3">                        
+                            <label for="second_name">Segundo Nombre</label>
+                            <input class="form-control" id="second_name" type="text" placeholder="Ingresa tu Segundo Nombre Fiador" >                            
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="last_name">Primer Apellido</label>
+                            <input class="form-control" id="last_name" type="text" placeholder="Ingresa Primer Apellido Fiador" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="last_name_1">Segundo Apellido</label>
+                            <input class="form-control" id="last_name_1" type="text" placeholder="Ingresa Segundo Apellido Fiador" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="first_name">¿Qué parentesco tiene con el arrendador?</label>
+                            <input class="form-control" id="first_name" type="text" placeholder="Ingresa tu Primer Nombre" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="tele fono_fijo">Número Telefonico Fijo Representante</label>
+                            <input class="form-control" id="telefono_fijo" type="tel" placeholder="Ingresa Tu Número Telefonico Fijo" maxlength= "10" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"  >                        </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="telefono_movil">Número Telefonico Movil Representante</label>
+                            <input class="form-control" id="telefono_movil" type="tel" placeholder="Ingresa Tu Número Telefonico Movil" maxlength= "10" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"  >
+                    </div>                    
+                    <div class="col-md-3 mb-3">
+                            <label for="email">Email  Representante</label>
+                            <input class="form-control" id="email" type="email" placeholder="name@domain.com" >
+                    </div>
+
+                    <h2 class="h5 mb-1">Ingresa Datos Domiciliarios Fiscales</h2>
+
+                    <div class="col-md-3 mb-3">
+                            <label for="calle">Calle</label>
+                            <input class="form-control" id="calle" type="text" placeholder="Calle" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="municipio">Municipio/Alcaldía</label>
+                            <input class="form-control" id="municipio" type="text" placeholder="Municipio ó Alcaldia" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="colonia">Colonia</label>
+                            <input class="form-control" id="colonia" type="text" placeholder="Colonia" >                        </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="estado">Estado</label>
+                            <input class="form-control" id="estado" type="text" placeholder="Estado" >
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                            <label for="number">Número Ext</label>
+                            <input class="form-control" id="number" type="number" placeholder="No." >
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                            <label for="number_in">Número Int</label>
+                            <input class="form-control" id="number_in" type="number" placeholder="No." >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="postal_code">Codigo Postal</label>
+                            <input class="form-control" id="postal_code" type="text" placeholder="Codigo Postal" minlength="5" maxlength="5" >
+                    </div>
+                    <div class="col-md-3 mb-2">
+                            <label for="referencias">Ingresa Referencias</label>
+                            <input class="form-control" id="referencias" type="text" placeholder="Referencias" >
+                    </div>
+
+                    <h2 class="h5 mb-2">Ingresa Datos Fiscales</h2>
+                    <div class="col-md-3 mb-3">
+                            <label for="profesion">Nombre Comercial de la Empresa</label>
+                            <input class="form-control" id="profesion" type="text" placeholder="Profesión/Ocupación" >
+                    </div>        
+                    <div class="col-md-3 mb-3">
+                            <label for="tel_emp">Razón Social</label>
+                            <input class="form-control" id="tel_emp" type="text" placeholder="Telefono de Contacto" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="ingreso_m">RFC</label>
+                            <input class="form-control" id="ingreso_m" type="text" placeholder="Monto Mensual" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="empresa_lab">Ingreso Mensual</label>
+                            <input class="form-control" id="empresa_lab" type="text" placeholder="Empresa en la que Labora" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="profesion">Antiguedad</label>
+                            | <input class="form-control" id="profesion" type="text" placeholder="Profesión/Ocupación" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="profesion">Telefono Fijo</label>
+                            <input class="form-control" id="profesion" type="text" placeholder="Profesión/Ocupación" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="profesion">Telefono Celular</label>
+                            <input class="form-control" id="profesion" type="text" placeholder="Profesión/Ocupación" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="profesion">e-mail</label>
+                            <input class="form-control" id="profesion" type="text" placeholder="Profesión/Ocupación" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="profesion">Página Web</label>
+                            <input class="form-control" id="profesion" type="text" placeholder="Profesión/Ocupación" >
+                    </div>
+                    <div class="row align-items-center">
+                    <h2 class="h5 mb-2">Ingresa Datos Del Domicilio Fiscal</h2>
+                    <div class="col-md-3 mb-3">
+                            <label for="postal_code">Codigo Postal</label>
+                            <input class="form-control" id="postal_code" type="text" placeholder="Codigo Postal" minlength="5" maxlength="5" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="municipio">Municipio/Alcaldía</label>
+                            <input class="form-control" id="municipio" type="text" placeholder="Municipio ó Alcaldia" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="colonia">Colonia</label>
+                            <input class="form-control" id="colonia" type="text" placeholder="Colonia" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="estado">Estado</label>
+                            <input class="form-control" id="estado" type="text" placeholder="Estado" >
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                            <label for="number">Número Ext</label>
+                            <input class="form-control" id="number" type="number" placeholder="No." >
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                            <label for="number_in">Número Int</label>
+                            <input class="form-control" id="number_in" type="number" placeholder="No." >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="calle">Calle</label>
+                            <input class="form-control" id="calle" type="text" placeholder="Calle" >
+                    </div>
+
+                    <h2 class="h5 mb-2">Acta Constitutiva</h2>
+                    <div class="col-md-3 mb-3">
+                            <label for="last_name">Nombre de Empresa Constituida</label>
+                            <input class="form-control" id="last_name" type="text" placeholder="Ingresa el Numero de Escritura Publica" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="last_name_1"> Número de Escritura</label>
+                            <input class="form-control" id="last_name_1" type="text" placeholder="Ingresa la Fecha de Escritura Publica" >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="first_name">CDMX o EDO. Mex</label>
+                            <input class="form-control" id="first_name" type="text" placeholder="Ingresa el numero de Notario" >
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                            <label for="tele fono_fijo">Nombre del Notario Publico</label>
+                            <input class="form-control" id="telefono_fijo" type="tel" placeholder="Nombre Completo del Notario" maxlength= "10" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"  >
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                            <label for="tele fono_fijo">Folio Mercantil</label>
+                            <input class="form-control" id="telefono_fijo" type="tel" placeholder="Nombre Completo del Notario" maxlength= "10" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"  >
+                    </div>
+                    <div class="col-md-3 mb-3">
+                            <label for="tele fono_fijo">Fecha</label>
+                            <input class="form-control" id="telefono_fijo" type="tel" placeholder="Nombre Completo del Notario" maxlength= "10" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"  >
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}  

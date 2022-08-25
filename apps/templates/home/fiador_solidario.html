@@ -1,0 +1,208 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Registro Persona Moral {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+{% block content%}
+<div class="row" id="FS" style="display:none">
+    <div class="col-12 col-xl">
+        <div class="card card-body border-0 shadow mb-4">        
+                <div class="row">
+                    <h2 class="h5 mb-4">Ingresa Datos Del Fiador</h2>
+
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="first_nameFS">Primer Nombre</label>
+                                <input class="form-control" id="first_nameFS" type="text" placeholder="Ingresa tu Primer Nombre Fiador" >
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="second_nameFS">Segundo Nombre</label>
+                                <input class="form-control" id="second_nameFS" type="text" placeholder="Ingresa tu Segundo Nombre Fiador" >
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="last_nameFS">Primer Apellido</label>
+                                <input class="form-control" id="last_nameFS" type="text" placeholder="Ingresa Primer Apellido Fiador" >
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="last_name_1FS">Segundo Apellido</label>
+                                <input class="form-control" id="last_name_1FS" type="text" placeholder="Ingresa Segundo Apellido Fiador" >
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="parentezcoFS">¿Qué parentesco tiene con el arrendador?</label>
+                                <input class="form-control" id="parentezcoFS" type="text" placeholder="Ingresa tu Primer Nombre" >
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="telefono_fijoFS">Número Telefonico Fijo Representante</label>
+                                <input class="form-control" id="telefono_fijoFS" type="number" placeholder="Ingresa Tu Número Telefonico Fijo" maxlength= "10" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"  >
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="telefono_movilFS">Número Telefonico Movil Representante</label>
+                                <input class="form-control" id="telefono_movilFS" type="number" placeholder="Ingresa Tu Número Telefonico Movil" maxlength= "10" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"  >
+                            </div>
+                        </div>                    
+                        <div class="col-md-3 mb-3">
+                                <label for="emailFS">Email  Representante</label>
+                                <input class="form-control" id="emailFS" type="email" placeholder="name@domain.com" >
+                        </div>
+
+                        <div class="col mb-3 mb-3">
+                                <label class="my-1 me-2" for="estado_civilFS">Estado Civil Representante</label>
+                                <select class="form-select" id="estado_civilFS" aria-label="Default select example">
+                                    <option selected>Estado Civil</option>
+                                    <option value="1">Soltero(a)</option>
+                                    <option value="2">Casado(a)</option>
+                                    <option value="3">Divorciado(a)</option>
+                                    <option value="4">Viudo(a)</option>
+                                    <option value="5">Bienes Mancomunados</option>
+                                    <option value="6">Bienes Separados</option>
+                                    <option value="7">Union Libre</option>+
+                                </select>
+                        </div>
+                        
+                        <h2 class="h5 mb-2">Ingresa Datos Domiciliarios del Fiador</h2>
+
+                        <div class="col-md-3 mb-3">
+                            <div>                      
+                                <label for="calleFS">Calle</label>
+                                <input class="form-control" id="calleFS" type="text" placeholder="Calle" >
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="municipioFS">Municipio/Alcaldía</label>
+                                <input class="form-control" id="municipioFS" type="text" placeholder="Municipio ó Alcaldia" >
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="coloniaFS">Colonia</label>
+                                <input class="form-control" id="coloniaFS" type="text" placeholder="Colonia" >
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="estadoFS">Estado</label>
+                                <input class="form-control" id="estadoFS" type="text" placeholder="Estado" >
+                            </div>
+                        </div>
+                        <div class="col-sm-3 mb-3">
+                            <div class="form-group">
+                                <label for="number_extFS">Número Ext</label>
+                                <input class="form-control" id="number_extFS" type="number" placeholder="No." >
+                            </div>
+                        </div>
+                        <div class="col-sm-3 mb-3">
+                            <div class="form-group">
+                                <label for="number_inFS">Número Int</label>
+                                <input class="form-control" id="number_inFS" type="number" placeholder="No." >
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="postal_codeFS">Codigo Postal</label>
+                                <input class="form-control" id="postal_codeFS" type="number" placeholder="Codigo Postal" minlength="5" maxlength="5" >
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="referenciasFS">Ingresa Referencias</label>
+                                <input class="form-control" id="referenciasFS" type="text" placeholder="Referencias" >
+                            </div>
+                        </div>
+
+                        <h2 class="h5 mb-1">Ingresa Datos De Su Empleo del Fiador</h2>
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="profesionFS">Profesión u Ocupacion</label>
+                                <input class="form-control" id="profesionFS" type="text" placeholder="Profesión/Ocupación" >
+                            </div>
+                        </div>        
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="tel_empFS">Telefono de Empleo</label>
+                                <input class="form-control" id="tel_empFS" type="number" placeholder="Telefono de Contacto" >
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div>
+                                <label for="ingreso_mFS">Ingreso Mensual</label>
+                                <input class="form-control" id="ingreso_mFS" type="number" placeholder="Monto Mensual" >
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div>
+                                <label for="empresa_labFS">Empresa en donde labora</label>
+                                <input class="form-control" id="empresa_labFS" type="text" placeholder="Empresa donde labora" >
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-sm-6 mt-4 mt-md-0">
+                            <!-- Radio -->
+                            <fieldset>
+                                <legend class="h5 mb-1">Recibos de Nomina</legend>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="nominaSIFS" id="nominaSIFS" value="option1">
+                                    <label class="form-check-label" for="nominaSIFS">
+                                      Si
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="nominaNOFS" id="nominaNOFS" value="option2">
+                                    <label class="form-check-label" for="nominaNOFS">
+                                      No
+                                    </label>
+                                  </div>
+                                <!-- End of Radio -->
+                            </fieldset>
+                        </div>
+
+                        <h2 class="h5 mb-1">Datos De sus Escritura</h2>
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="escritura_publicaFS">Escritura Publica</label>
+                                <input class="form-control" id="escritura_publicaFS" type="text" placeholder="Ingresa el Numero de Escritura Publica" >
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="fecha_propiedadFS"> Fecha de Propiedad</label>
+                                <input class="form-control" id="fecha_propiedadFS" type="date" placeholder="Ingresa la Fecha de Escritura Publica" >
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="notario_publicoFS">Número de Notario Publico</label>
+                                <input class="form-control" id="notario_publicoFS" type="text" placeholder="Ingresa el numero de Notario" >
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 mb-3">
+                            <div>
+                                <label for="nombre_notarioFS">Nombre del Notario Publico</label>
+                                <input class="form-control" id="nombre_notarioFS" type="tel" placeholder="Nombre Completo del Notario" maxlength= "10" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"  >
+                            </div>
+                        </div>
+
+                <div class="mt-3">
+                    <button class="btn btn-success" id="confirmarBTNFS" type="submit" > Confirmar</button>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
