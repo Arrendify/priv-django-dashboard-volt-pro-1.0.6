@@ -3,6 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
+from multiprocessing import context
 from django import template
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
@@ -12,7 +13,7 @@ from django.urls import reverse
 from requests import get
 from .models import p_fisica, p_moral
 from django.shortcuts import redirect, render, get_object_or_404
-from .forms import MoralForm, form_test, FisicaForm
+from .forms import MoralForm, form_test, FisicaForm, InmueblesForm
 
 
 @login_required(login_url="/login/")
@@ -131,13 +132,22 @@ def removerprueba(request, id):
 
     return render(request, "home/tabla-personasm.html")
 
-# #modulo inmuebles
-# def forminmueble(request):
-#     form = InmueblesForm(request.POST or None)
-#     if request.method == 'POST':
-#         if form.is_valid():
-#             obj = form
- 
+#modulo inmuebles
+def forminmueble(request):
+    if request.method == 'POST':
+        form=InmueblesForm(request.POST or None)
+        print(request.POST)
+        if form.is_valid():
+            print("Valido")
+            form.save()
+            return redirect('/listarinmueble')
+        else:
+            print("No valido")
+            print(form.errors)
+            form= InmueblesForm()
+
+    context={'form': form}
+    return render(request, 'home/registro-inmueble.html', context)
 
 @login_required(login_url="/login/")
 def pages(request):

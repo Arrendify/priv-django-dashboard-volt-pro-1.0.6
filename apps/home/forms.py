@@ -1,5 +1,5 @@
 from django import forms
-from .models import  p_fisica, p_moral, form_test
+from .models import  p_fisica, p_moral, form_test, inmuebles
 
 class MoralForm(forms.ModelForm):
     class Meta:
@@ -16,8 +16,7 @@ class form_test(forms.ModelForm):
         model=form_test
         fields='__all__'
 
-# class InmueblesForm(forms.ModelForm):
-    
-#     class Meta:
-#         model = inmuebles
-#         fields = '__all__'
+class InmueblesForm(forms.ModelForm):    
+    class Meta:
+        model = inmuebles
+        fields = '__all__'
