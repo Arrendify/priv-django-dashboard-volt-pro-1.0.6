@@ -11,7 +11,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from requests import get
-from .models import p_fisica, p_moral
+from .models import p_fisica, p_moral, inmuebles
 from django.shortcuts import redirect, render, get_object_or_404
 from .forms import MoralForm, form_test, FisicaForm, InmueblesForm
 
@@ -140,7 +140,7 @@ def forminmueble(request):
         if form.is_valid():
             print("Valido")
             form.save()
-            return redirect('/listarinmueble')
+            return redirect('/listarInmueble')
         else:
             print("No valido")
             print(form.errors)
@@ -148,6 +148,32 @@ def forminmueble(request):
 
     context={'form': form}
     return render(request, 'home/registro-inmueble.html', context)
+
+def listarInmueble(request):
+    obji=inmuebles.objects.all()
+    print(inmuebles)
+    return render(request, 'home/tabla-inmuebles.html', {'obji': obji })
+
+
+def editarpm(request, id):
+    # fetch the object related to passed id
+    obji = inmuebles.objects.get(id = id)
+    form = InmueblesForm(request.POST or None, instance=inmuebles)
+    if form.is_valid():
+        print("valido")
+        form.save()
+        return redirect('/listarInmuebles')      
+          
+    context={'obji':obji}
+ 
+    return render(request, "home/editI.html", context)
+
+def removerpf(request, id):
+    obji = inmuebles.objects.get(id = id)
+    obji.delete()
+
+    return HttpResponseRedirect(reverse('listarInmuebles'))
+
 
 @login_required(login_url="/login/")
 def pages(request):
