@@ -199,8 +199,12 @@ class p_fisica(models.Model):
 
 class form_test(models.Model):
     id = models.AutoField(primary_key=True)
+    user=models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     nombre=models.CharField(max_length=30)
     nombre1=models.CharField(max_length=30)
+
+    class Meta:
+        db_table = 'PRUEBAS'
 
 class inmuebles(models.Model):
     id = models.AutoField(primary_key=True)

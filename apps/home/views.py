@@ -14,6 +14,7 @@ from requests import get
 from .models import p_fisica, p_moral, inmuebles
 from django.shortcuts import redirect, render, get_object_or_404
 from .forms import MoralForm, form_test, FisicaForm, InmueblesForm
+from django.contrib.auth.models import User
 
 
 @login_required(login_url="/login/")
@@ -23,6 +24,7 @@ def index(request):
     return HttpResponse(html_template.render(context, request))
 
 #Modulo para persona moral
+#Formulario de registro de persona moral
 def cpm_form(request):
     # logged_in_user=request.user
     if request.method == "POST":
@@ -55,24 +57,6 @@ def cpf_form(request):
     
     return render(request, 'home/registro-p-fisica.html', {'form' : form})
 
-#Form to test
-def testform(request):
-    if request.method == "POST":
-        print(request.POST)
-        formp= form_test(request.POST or None)
-        if formp.is_valid():
-            print("valido")
-            formp.save()
-            return redirect('/listarpersonam')
-            
-        else:
-            print("No valido")
-            print(formp.errors)
-            formp= form_test()
-
-    context= {'formp' : formp}
-    return render(request, 'home/registro-p-f.html', context)
-
 #listar personas
 def listarPersonam(request):
     personas=p_moral.objects.all()
@@ -98,7 +82,6 @@ def editarpf(request, id):
  
     return render(request, "home/editpf.html", context)
 
-
 def editarpm(request, id):
     # fetch the object related to passed id
     objpm = p_moral.objects.get(id = id)
@@ -119,21 +102,16 @@ def removerpm(request, id):
 
     return HttpResponseRedirect(reverse('listarPersonam'))
 
-
 def removerpf(request, id):
     objpf = p_fisica.objects.get(id = id)
     objpf.delete()
 
     return HttpResponseRedirect(reverse('listarPersonaf'))
 
-def removerprueba(request, id):
-    objpm = p_moral.objects.get(id = id)
-    objpm.delete()
 
-    return render(request, "home/tabla-personasm.html")
 
 #modulo inmuebles
-def forminmueble(request):
+def formInmueble(request):
     if request.method == 'POST':
         form=InmueblesForm(request.POST or None)
         print(request.POST)
@@ -154,9 +132,7 @@ def listarInmueble(request):
     print(inmuebles)
     return render(request, 'home/tabla-inmuebles.html', {'obji': obji })
 
-
-def editarpm(request, id):
-    # fetch the object related to passed id
+def editarInmueble(request, id):
     obji = inmuebles.objects.get(id = id)
     form = InmueblesForm(request.POST or None, instance=inmuebles)
     if form.is_valid():
@@ -168,12 +144,57 @@ def editarpm(request, id):
  
     return render(request, "home/editI.html", context)
 
-def removerpf(request, id):
+def removerInmueble(request, id):
     obji = inmuebles.objects.get(id = id)
     obji.delete()
 
     return HttpResponseRedirect(reverse('listarInmuebles'))
 
+
+#views pruebas
+def testform(request):
+    if request.method == "POST":
+        print(request.POST)
+        formp= form_test(request.POST or None)
+        if formp.is_valid():
+            print("valido")
+            obj = formp.save(commit=False)
+            obj.user = request.user
+            obj.save()
+            return redirect('/listarpersonam')
+            
+        else:
+            print("No valido")
+            print(formp.errors)
+            formp= form_test()
+
+    context= {'formp' : formp}
+
+    return render(request, 'home/registro-p-f.html', context)
+
+# def editarPrueba(request, id):
+#     # fetch the object related to passed id
+#     objpm = p_moral.objects.get(id = id)
+#     form = MoralForm(request.POST or None, instance=objpm)
+#     if form.is_valid():
+#         print("valido")
+#         form.save()
+#         return redirect('/listarpersonam')      
+          
+#     context={'objpm':objpm}
+ 
+#     return render(request, "home/editpm.html", context)
+
+# def listarPrueba(request):
+#     personas=p_fisica.objects.all()
+#     print(personas)
+#     return render(request, 'home/tabla-personasf.html', {'personas': personas })
+
+# def removerprueba(request, id):
+#     objpm = p_moral.objects.get(id = id)
+#     objpm.delete()
+
+#     return render(request, "home/tabla-personasm.html")
 
 @login_required(login_url="/login/")
 def pages(request):
