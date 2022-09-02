@@ -40,12 +40,12 @@
                             <input class="form-control" id="renta" name="renta" type="number" placeholder="Ingresa la Renta" required>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label for="v_inmueble">V. Inmueble</label>
-                            <input class="form-control" id="v_inmueble" name="v_inmueble" type="text" placeholder="Ingresa V. Inmueble" required>
+                            <label for="v_inmueble">Valor del Inmueble</label>
+                            <input class="form-control" id="v_inmueble" name="v_inmueble" type="text" placeholder="Ingresa Valor del Inmueble" required>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label for="c-castral">Clave Castral</label>
-                            <input class="form-control" id="c-castral" name="c-castral" type="text" placeholder="Ingresa Clave Castral" required>
+                            <label for="c-castatral">Clave Castral</label>
+                            <input class="form-control" id="c-catastral" name="c-catastral" type="text" placeholder="Ingresa Clave Catastral" required>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="t_inmueble">Tipo de Inmueble</label>
@@ -88,7 +88,7 @@
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="n_exterior">Número Interior/Depto (Opcional)</label>
-                            <input class="form-control" id="n_exterior" name="n_exterior"  type="number" placeholder="Número Interior/Depto" >
+                            <input class="form-control" id="n_exterior" name="n_exterior"  type="text" placeholder="Número Interior/Depto" >
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="calle">Calle</label>
@@ -110,12 +110,8 @@
                             <input class="form-control" id="baños" name="baños" type="number" placeholder="Baños" required>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label for="recamaras">Recamaras</label>
-                            <input class="form-control" id="recamaras" name="recamaras" type="number" placeholder="Recamaras" required>
-                        </div>
-                        <div class="col-md-3 mb-3">
-                            <label for="plantas">Plantas</label>
-                            <input class="form-control" id="plantas" name="plantas" type="number" placeholder="Plantas" required>
+                            <label for="pisos">Pisos</label>
+                            <input class="form-control" id="pisos" name="pisos" type="number" placeholder="Pisos" required>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="c_m2">Construidos m2</label>
@@ -175,7 +171,7 @@
                                     <label class="form-check-label" for="a_ccerrado">Circuito Cerrado</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" >
+                                    <input class="form-check-input" title="Borrar" type="checkbox" oninput="dialogo('Especifique en la descripción');">
                                     <label class="form-check-label" for="otro" >Otro</label>
                                 </div>
                             </div>
@@ -265,7 +261,18 @@
           document.getElementById("OSPF").style.display = "block";
         }
       }
-      
+      function dialogo(texto){//introduzca el texto que se quiere que aparzca en el evento
+        if(s==0){
+        document.getElementById('cont1').innerHTML=texto;
+        s=1;
+        return;
+        }
+        if(s==1){
+        document.getElementById('cont1').innerHTML='';
+        s=0;
+        return;
+        }
+    }
 </script>
 
 {% endblock javascripts %}
