@@ -26,13 +26,14 @@ def index(request):
 #Modulo para persona moral
 #Formulario de registro de persona moral
 def cpm_form(request):
-    # logged_in_user=request.user
     if request.method == "POST":
         form = MoralForm(request.POST or None)
         print(request.POST)
         if form.is_valid():
             print("valido")
-            form.save()
+            formpm = form.save(commit=False)
+            formpm.user = request.user
+            formpm.save()
             return redirect('/listarpersonam')
         else:
             print(" No valido")
@@ -48,7 +49,9 @@ def cpf_form(request):
         print(request.POST)
         if form.is_valid():
             print("valido")
-            form.save()
+            formpf = form.save(commit=False)
+            formpf.user = request.user
+            formpf.save()
             return redirect('/listarpersonaf')
         else:
             print(" No valido")
@@ -59,12 +62,12 @@ def cpf_form(request):
 
 #listar personas
 def listarPersonam(request):
-    personas=p_moral.objects.all()
+    personas=p_moral.objects.all().filter(user_id=request.user)
     print(personas)
     return render(request, 'home/tabla-personasm.html', {'personas': personas })
 
 def listarPersonaf(request):
-    personas=p_fisica.objects.all()
+    personas=p_fisica.objects.all().filter(user_id=request.user)
     print(personas)
     return render(request, 'home/tabla-personasf.html', {'personas': personas })
 
@@ -118,7 +121,7 @@ def formInmueble(request):
         if form.is_valid():
             print("Valido")
             form.save()
-            return redirect('/listarInmueble')
+            return redirect('/listarinmuebles')
         else:
             print("No valido")
             print(form.errors)
@@ -128,7 +131,7 @@ def formInmueble(request):
     return render(request, 'home/registro-inmueble.html', context)
 
 def listarInmueble(request):
-    obji=inmuebles.objects.all()
+    obji=inmuebles.objects.all().filter(user_id=request.user)
     print(inmuebles)
     return render(request, 'home/tabla-inmuebles.html', {'obji': obji })
 
@@ -138,7 +141,7 @@ def editarInmueble(request, id):
     if form.is_valid():
         print("valido")
         form.save()
-        return redirect('/listarInmuebles')      
+        return redirect('/listarinmuebles')      
           
     context={'obji':obji}
  
@@ -185,10 +188,10 @@ def testform(request):
  
 #     return render(request, "home/editpm.html", context)
 
-# def listarPrueba(request):
-#     personas=p_fisica.objects.all()
-#     print(personas)
-#     return render(request, 'home/tabla-personasf.html', {'personas': personas })
+def listarPrueba(request):
+    personas=p_fisica.objects.all().filter(user_id=request.user)
+    print(personas)
+    return render(request, 'home/tabla-personasf.html', {'personas': personas })
 
 # def removerprueba(request, id):
 #     objpm = p_moral.objects.get(id = id)

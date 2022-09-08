@@ -22,7 +22,7 @@ urlpatterns = [
     path('removerpf/<id>', views.removerpf, name='removerpf'),
     #Rutas Inmuebles
     path('registroinmueble', views.formInmueble, name='creain'),
-    path('listarinmuebles', views.listarInmueble, name='listarInmuebles'),
+    path('listarinmuebles', views.listarInmueble, name='listarInmueble'),
     path('editarIn/<id>', views.editarInmueble, name='editarin'),
     path('removerin/<id>', views.removerInmueble, name='removerin'),
     #Rutas Pruebas
