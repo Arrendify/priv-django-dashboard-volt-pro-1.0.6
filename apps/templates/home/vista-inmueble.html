@@ -9,12 +9,7 @@
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
     <div>
-        <a href="/tabla-inmuebles.html"><button type="button" class="btn btn-secondary " ><svg class="icon icon-xs" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" clip-rule="evenodd"></path></svg>Regresar  
-        </button>
-        </a>
-    </div>
-    <div>
-        <a href="/registro-inmueble.html"><button type="button" class="btn btn-tertiary " ><svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" clip-rule="evenodd"></path></svg>Editar  
+        <a href="/listarinmuebles"><button type="button" class="btn btn-secondary " ><svg class="icon icon-xs" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" clip-rule="evenodd"></path></svg>Regresar  
         </button>
         </a>
     </div>
@@ -26,86 +21,270 @@
         <div class="card card-body border-0 shadow mb-4">
             <h2 class="h5 mb-3">Vista del Inmueble</h2>
             <div class="row">
-                
-                <div class="col-md-6 mb-3">
-                    <div class="col-md-12 mb-3">
-                        <label for="n-p-a">Nombre del Propietario Administrador</label>
-                        <input type="text" id="d-c-a" class="form-control" placeholder="Disabled input" disabled>
-                    </div>
-                    <div class="col-md-12 mb-3" >
-                        <label for="descripcion" class="h6 mb-2">Descripción</label>
-                        <textarea class="form-control" placeholder="Descripción" id="descripcion" rows="6" disabled></textarea>
-                    </div>
-                    <div class="col-md-6">
-                        <a class="col-md-4" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" >
-                            <button class="btn btn-secondary mt-2 mb-2" type="button" >Link de Fotos y videos (por lo mientras a facebook)</button>
+                <div class="col-md-6 card border-0 shadow mb-4 " >
+                    <div class="col-md-7 mb-3">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" >
+                            <button class="btn btn-secondary mt-2" type="button" >Link de Fotos y videos (por lo mientras a facebook)</button>
                         </a>
                     </div>
+                    <div class="d-xl-flex align-items-center mb-3 " >
+                        <div class="col-md-1 " align="center" id="atras">
+                            <button class="btn btn-secondary" type="button"><svg class="icon icon-xs" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"></path></svg></button>
+                        </div>
+                        <div class="col-md-10 me-2 image-xl" align="center" >
+                            <img class="rounded "   src="/static/assets/img/galeria/img_1.jpg" id="cambio" alt="" data-bs-toggle="modal" data-bs-target="#modal-default">
+                        </div>
+                        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <h2 class="h6 modal-title">Fotos</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" align="center">
+                                        <img class="rounded "  src="/static/assets/img/galeria/img_1.jpg" id="foto" alt="">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-link text-gray-600 ms-auto" data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1 " align="center" id="adel">
+                            <button class="btn btn-secondary" type="button"><svg class="icon icon-xs" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" ></path></svg></button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 mb-3">
+                <div class="col-md-6 mb-2">
                     <div class="col-md-12 mb-3">
-                        <label for="d-c-a">Datos de Contacto del Administrador</label>
-                        <input type="text" id="d-c-a" class="form-control" placeholder="Disabled input" disabled>
+                        <label for="n-p-a">Nombre del Propietario Administrador</label>
+                        <input type="text" id="d-c-a" class="form-control" placeholder="Jhon Cleant" disabled>
                     </div>
                     <div class="col-md-12 mb-3">
-                        <label for="precio">Precio</label>
-                        <input type="text" id="precio" class="form-control" placeholder="Disabled input" disabled>
-                    </div>
+                        <label for="d-c-a">Telefono Contacto</label>
+                        <input type="text" id="d-c-a" class="form-control" placeholder="5512131415" disabled>
+                    </div>                
                     <div class="col-md-12 mb-3">
                         <label for="ubicacion">Ubicación</label>
-                        <input type="text" id="ubicacion" class="form-control" placeholder="Disabled input" disabled>
+                        <input type="text" id="ubicacion" class="form-control" value="{{verinmueble.municipio_alcaldia}} {{verinmueble.colonia}} {{verinmueble.postal_code}} {{verinmueble.estado}} {{verinmueble.calle}} {{verinmueble.numeroExterior}}" disabled>
+                    </div>
+                    <div class="col-md-6 mb-3 " >
+                        <input class="form-check-input" type="checkbox" id="o_venta" disabled checked>
+                        <label class="form-check-label" for="o_venta">En Renta con opción a Venta</label>
                     </div>
                 </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="alias">Alias del Inmueble </label>
+                                <input class="form-control" id="alias" name="alias" type="text" value="{{verinmueble.alias_inmueble}}" disabled>
+                            </div>
+                            <div class="col-md-6 mb-3"><!---->
+                                <label for="estatus">Estatus del Inmueble </label>
+                                <input class="form-control" id="estatus" name="estatus" type="text" value="{{verinmueble.estatus_inmueble}}" disabled>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="t_inmueble">Tipo de Inmueble</label>
+                                <input class="form-control" id="t_inmueble" name="t_inmueble" type="text" value="{{verinmueble.tipo_inmueble}}" disabled>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="u_inmueble">Uso del Inmueble</label>
+                                <input class="form-control" id="u_inmueble" name="u_inmueble" type="text" value="{{verinmueble.uso_inmueble}}" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="renta">Renta</label>
+                                <input class="form-control" id="renta" name="renta" type="number" value="{{verinmueble.renta}}" min="0" disabled>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="venta">Venta</label>
+                                <input class="form-control" id="venta" name="venta" min="0" type="number" value="{{verinmueble.venta}}" disabled>
+                            </div>
+                            <div class="col-md-6 mb-5">
+                                <label for="v_inmueble">Valor del Inmueble</label>
+                                <input class="form-control" id="v_inmueble" name="v_inmueble" min="0" type="number" value="{{verinmueble.valor_inmueble}}" disabled>
+                            </div>
+                            <div class="col-md-6 mb-5">
+                                <label for="manteniniento">Cuota de Mantenimiento</label>
+                                <input class="form-control" id="mantenimiento" name="mantenimiento" type="number" value="{{verinmueble.cuota_mantenimiento}}" min="0" disabled>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="b_medio">Baños Completos</label>
+                        <input class="form-control" id="b_medio" name="b_medio" type="number" value="{{verinmueble.n_baños}}" min="0" disabled>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="b_medio">Medios Baños</label>
+                        <input class="form-control" id="b_medio" name="b_medio" type="number" value="{{verinmueble.n_medios_baños}}" min="0" disabled>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="recamaras">Recamaras</label>
+                        <input class="form-control" id="recamaras" name="recamaras" type="number" value="{{verinmueble.n_recamaras}}" min="0" disabled>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="pisos">Pisos</label>
+                        <input class="form-control" id="pisos" name="pisos" type="number" value="{{verinmueble.n_pisos}}" min="0" disabled>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="cajones">Cajones de Estacionamiento</label>
+                        <input class="form-control" id="cajones" name="cajones" type="number" value="{{verinmueble.estacionamiento_cajones}}" min="0" disabled>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="c_m2">Construidos m2</label>
+                        <input class="form-control" id="c_m2" name="c_m2" type="number" value="{{verinmueble.terrenoContruido}}" min="0" disabled>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <label for="t_m2">Terreno m2</label>
+                        <input class="form-control" id="t_m2" name="t_m2" type="number" value="{{verinmueble.terrenoTotal}}" min="0" disabled>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <label for="c_año">Año de Construcción</label>
+                        <input class="form-control" id="c_año" name="c_año" type="number" value="{{verinmueble.año_contruccion}}" min="0" maxlength="4" disabled>
+                    </div>
                 
-                <h2 class="h5 mb-3" >Breve Descripción del Inmueble</h2>
-                <div class="col-md-6 mb-4 row ">
-                    <h2 class="h6 mb-3">Características</h2>    
-                    <div class="col-md-4">
-                        <input class="form-check-input" type="checkbox" value="" id="a_garage" disabled>
-                        <label class="form-check-label" for="a_garage">Garage</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-check-input" type="checkbox" value="" id="a_terraza" disabled>
-                        <label class="form-check-label" for="a_terraza">Terraza</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-check-input" type="checkbox" value="" id="a_alberca" disabled>
-                        <label class="form-check-label" for="a_alberca">Alberca</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-check-input" type="checkbox" value="" id="a_cocina" disabled>
-                        <label class="form-check-label" for="a_cocina">Cocina</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-check-input" type="checkbox" value="" id="a_apotable" disabled>
-                        <label class="form-check-label" for="a_apotable">Agua potable</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-check-input" type="checkbox" value="" id="a_amueblado" disabled>
-                        <label class="form-check-label" for="a_mueblado">Amueblado</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-check-input" type="checkbox" value="" id="a_c_lavado" disabled>
-                        <label class="form-check-label" for="a_c_lavado">Cuarto de Lavado</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-check-input" type="checkbox" value="" id="a_mascotas" disabled>
-                        <label class="form-check-label" for="a_mascotas">Mascotas</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-check-input" type="checkbox" value="" id="a_seguridad" disabled>
-                        <label class="form-check-label" for="a_seguridad">Seguridad</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-check-input" type="checkbox" value="" id="a-ccerrado" disabled>
-                        <label class="form-check-label" for="a_ccerrado">Circuito Cerrado</label>
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-check-input" type="checkbox" value="" id="otro" disabled>
-                        <label class="form-check-label" for="otro">Otro</label>
+                <a><button type="text" class="btn btn-secondary mb-4" >Breve Descripción del Inmueble</button></a>
+                <div class="col-md-6 mb-2 ">
+                    <div class="row">
+                        <h2 class="h5 mb-2">Amenidades</h2>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="a_garage" checked disabled>
+                            <label class="form-check-label" for="a_garage">Garage</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="a_terraza" disabled>
+                            <label class="form-check-label" for="a_terraza">Terraza</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="a_alberca" disabled>
+                            <label class="form-check-label" for="a_alberca">Alberca</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="a_cocina" disabled>
+                            <label class="form-check-label" for="a_cocina">Cocina</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="a_amueblado" disabled>
+                            <label class="form-check-label" for="a_mueblado">Amueblado</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="a_c_lavado" disabled>
+                            <label class="form-check-label" for="a_c_lavado">Cuarto de Lavado</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="a_mascotas" disabled>
+                            <label class="form-check-label" for="a_mascotas">Mascotas</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gym" disabled>
+                            <label class="form-check-label" for="gym">Gym</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="bar" disabled>
+                            <label class="form-check-label" for="bar">Bar</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="r_bar" disabled>
+                            <label class="form-check-label" for="r_bar">Restaurante Bar</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="s_cine" disabled>
+                            <label class="form-check-label" for="s_cine">Sala de Cine</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="c_estudios" disabled>
+                            <label class="form-check-label" for="c_estudios">Cuarto de Estudios</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="a_comun" disabled>
+                            <label class="form-check-label" for="a_comun">Área comun</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="s_juegos" disabled>
+                            <label class="form-check-label" for="s_juegos">Sala de Juegos</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="s_eventos" disabled>
+                            <label class="form-check-label" for="s_eventos">Salón de Eventos</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="c_deportivas" disabled>
+                            <label class="form-check-label" for="c_deportivas">Canchas Deportivas</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="b_center" disabled>
+                            <label class="form-check-label" for="b_center">Business Center</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="r_garden" disabled>
+                            <label class="form-check-label" for="r_garden">Roof Garden</label>
+                        </div>
+                        <div class="col-md-4" >
+                            <input class="form-check-input" type="checkbox" title="Especifique en la descripción" data-bs-toggle="tooltip" data-bs-placement="right" disabled>
+                            <label class="form-check-label" for="otro" >Otro</label>
+                        </div>
                     </div>
                 </div>
-                
+                <div class="col-md-6 mb-2 ">
+                    <div class="row">
+                        <h2 class="h5 mb-2">Servicios</h2>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="wifi" disabled>
+                            <label class="form-check-label" for="wifi">Internet/Wifi</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="energia" disabled>
+                            <label class="form-check-label" for="energia">Energía Eléctrica</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="a_potable" disabled>
+                            <label class="form-check-label" for="a_potable">Agua Potable</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="t_cable" disabled>
+                            <label class="form-check-label" for="t_cable">Tele por Cable</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="gas" disabled>
+                            <label class="form-check-label" for="gas">Gas</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="l_telefonica" disabled>
+                            <label class="form-check-label" for="l_telefonica">Línea Telefónica</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="drenaje" disabled>
+                            <label class="form-check-label" for="drenaje">Drenaje</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="seguridad" disabled>
+                            <label class="form-check-label" for="seguridad">Seguridad</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="c_cerrado" disabled>
+                            <label class="form-check-label" for="c_cerrado">Circuito Cerrado</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" id="a_juegos" disabled>
+                            <label class="form-check-label" for="a_juegos">Área de juegos</label>
+                        </div>
+                        <div class="col-md-4" >
+                            <input class="form-check-input" type="checkbox" value="" id="otro" disabled>
+                            <label class="form-check-label" for="otro" >Otro</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="descripcion" class="h5 mb-2">Descripción</label>
+                    <input class="form-control" value="{{verinmueble.descripcion}}" id="descripcion" rows="5" disabled>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label for="r_inmueble" class="h6 mb-2">Referencias</label>
+                    <input class="form-control" value="{{verinmueble.referencias}}" id="r_inmueble" rows="5" disabled>
+                </div>
             </div>
         </div>
     </div>
@@ -128,6 +307,53 @@
         }
       }
       
+</script>
+<script>//Galeria
+    let adelante=document.getElementById("adel");
+    let foto=document.getElementById("foto");
+    let atras=document.getElementById("atras");
+    let imagechange=document.getElementById("cambio");
+    var i=1;
+    const a="/static/assets/img/galeria/img_";
+    const c=".jpg";
+    const n_imag=5;
+    var direc;
+    foto.onclick=function(){
+      if(i==n_imag){
+          i=1;
+      }else{
+          i++;
+      }
+      const b=i;
+      direc=a+b+c;
+      m_fotos();
+  }
+    adelante.onclick=function(){
+      if(i==n_imag){
+          i=1;
+      }else{
+          i++;
+      }
+      const b=i;
+      direc=a+b+c;
+      m_fotos();
+    }
+    atras.onclick=function(){
+      if(i==1){
+          i=n_imag;
+      }else{
+          i--;
+      }
+      const b=i;
+      direc=a+b+c;
+      m_fotos();
+    }
+    function m_fotos(){
+      imagechange.src=direc;
+      foto.src=direc;
+      
+    }
+    
 </script>
 
 {% endblock javascripts %}

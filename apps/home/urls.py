@@ -21,10 +21,11 @@ urlpatterns = [
     path('editarpf/<id>', views.editarpf, name='editarpf'),
     path('removerpf/<id>', views.removerpf, name='removerpf'),
     #Rutas Inmuebles
-    path('registroinmueble', views.formInmueble, name='creain'),
+    path('registroinmueble', views.formInmueble, name='createin'),
     path('listarinmuebles', views.listarInmueble, name='listarInmueble'),
-    path('editarIn/<id>', views.editarInmueble, name='editarin'),
+    path('editarin/<id>', views.editarInmueble, name='editarin'),
     path('removerin/<id>', views.removerInmueble, name='removerin'),
+    path('vistain/<id>', views.verInmueble, name='verin'),
     #Rutas Pruebas
     path('test', views.testform, name='test'),  #SUPUESTAMENTE ESTE PATH CONECTA LA VISTA MANDA LOS DATOS SI GUARDA EL OBJETO 
     # Matches any html file

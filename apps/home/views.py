@@ -33,6 +33,7 @@ def cpm_form(request):
             print("valido")
             formpm = form.save(commit=False)
             formpm.user = request.user
+            print(formpm)
             formpm.save()
             return redirect('/listarpersonam')
         else:
@@ -51,6 +52,7 @@ def cpf_form(request):
             print("valido")
             formpf = form.save(commit=False)
             formpf.user = request.user
+            print(formpf)
             formpf.save()
             return redirect('/listarpersonaf')
         else:
@@ -78,7 +80,9 @@ def editarpf(request, id):
     form = FisicaForm(request.POST or None, instance=objpf)
     if form.is_valid():
         print("valido")
-        form.save()
+        formpf = form.save(commit=False)
+        formpf.user = request.user
+        formpf.save()
         return redirect('/listarpersonaf')      
           
     context={'objpf':objpf}
@@ -90,8 +94,9 @@ def editarpm(request, id):
     objpm = p_moral.objects.get(id = id)
     form = MoralForm(request.POST or None, instance=objpm)
     if form.is_valid():
-        print("valido")
-        form.save()
+        formpm = form.save(commit=False)
+        formpm.user = request.user
+        formpm.save()
         return redirect('/listarpersonam')      
           
     context={'objpm':objpm}
@@ -120,38 +125,48 @@ def formInmueble(request):
         print(request.POST)
         if form.is_valid():
             print("Valido")
-            form.save()
+            formin = form.save(commit=False)
+            formin.user = request.user
+            print(formin)
+            formin.save()
             return redirect('/listarinmuebles')
         else:
             print("No valido")
             print(form.errors)
             form= InmueblesForm()
 
-    context={'form': form}
-    return render(request, 'home/registro-inmueble.html', context)
+    return render(request, 'home/registro-inmueble.html', {'form': form})
 
 def listarInmueble(request):
-    obji=inmuebles.objects.all().filter(user_id=request.user)
-    print(inmuebles)
-    return render(request, 'home/tabla-inmuebles.html', {'obji': obji })
+    objinmuebles=inmuebles.objects.all().filter(user_id=request.user)
+    print(objinmuebles)
+    return render(request, 'home/tabla-inmuebles.html', {'objinmuebles': objinmuebles })
+
+def verInmueble(request, id):
+    verinmueble=inmuebles.objects.get(id=id)
+    print(verinmueble)
+    return render(request, 'home/vista-inmueble.html', {'verinmueble': verinmueble })
 
 def editarInmueble(request, id):
-    obji = inmuebles.objects.get(id = id)
-    form = InmueblesForm(request.POST or None, instance=inmuebles)
+    objin = inmuebles.objects.get(id = id)
+    form = InmueblesForm(request.POST or None, instance=objin)
+    print(request.POST)
     if form.is_valid():
         print("valido")
-        form.save()
+        formin = form.save(commit=False)
+        formin.user = request.user        
+        formin.save()
         return redirect('/listarinmuebles')      
           
-    context={'obji':obji}
+    context={'objin':objin}
  
-    return render(request, "home/editI.html", context)
+    return render(request, "home/editin.html", context)
 
 def removerInmueble(request, id):
-    obji = inmuebles.objects.get(id = id)
-    obji.delete()
+    objin = inmuebles.objects.get(id = id)
+    objin.delete()
 
-    return HttpResponseRedirect(reverse('listarInmuebles'))
+    return HttpResponseRedirect(reverse('listarInmueble'))
 
 
 #views pruebas
