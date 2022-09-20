@@ -139,11 +139,11 @@
                         <span class="sidebar-text">Personas Fisicas</span>
                     </a>
                     </li>
-                    <li class="nav-item {% if 'page-invoice' in segment %} active {% endif %}">
+                    {% comment %} <li class="nav-item {% if 'page-invoice' in segment %} active {% endif %}">
                     <a class="nav-link" href="/page-invoice.html">
                         <span class="sidebar-text">Prueba</span>
                     </a>
-                    </li>
+                    </li> {% endcomment %}
                 </ul>
             </div>
         </li>
@@ -174,8 +174,8 @@
                     </span>
                  </a>
             </li>
-            <li class="nav-item {% if 'tabla-inmueble.html' in segment %} active {% endif %}">
-                <a href="/tabla-inmuebles.html" class="nav-link d-flex align-items-center justify-content-between">
+            <li class="nav-item {% if 'tabla-inmuebles.html' in segment %} active {% endif %}">
+                <a href="listarinmuebles" class="nav-link d-flex align-items-center justify-content-between">
                     <span>
                     <span class="sidebar-icon">
                         <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 12v-2h3v2H6z"/><path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM3 9h10v1h-3v2h3v1h-3v2H9v-2H6v2H5v-2H3v-1h2v-2H3V9z"/></svg>
@@ -189,7 +189,7 @@
 </li>
 <!--Termina -->
 
-        <li class="nav-item {% if 'tabla-personas.html' in segment %} active {% endif %}">
+        {% comment %} <li class="nav-item {% if 'tabla-personas.html' in segment %} active {% endif %}">
             <a href="listarpersonam" class="nav-link d-flex align-items-center justify-content-between">
                 <span>
                 <span class="sidebar-icon">
@@ -242,7 +242,7 @@
                 <span class="sidebar-text">Obligado Solidario Persona Moral</span>
                 </span>
             </a>
-        </li>
+        </li> {% endcomment %}
 
         <li class="nav-item {% if 'user_list.html' in segment %} active {% endif %}">
             <a href="/user_list.html" class="nav-link">

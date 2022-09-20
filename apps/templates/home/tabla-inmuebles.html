@@ -54,15 +54,18 @@
         <thead>
             <tr >
                 <th class="border-bottom"></th>
-                <th class="border-bottom">ID Inmueble</th>						
                 <th class="border-bottom">Alias del Inmueble</th>
-                <th class="border-bottom">Propietario del Inmueble</th>
+                <th class="border-bottom">Estatus del Inmueble</th>
                 <th class="border-bottom">Tipo de Inmueble</th>
-                <th class="border-bottom">Clave Castral</th>
+                <th class="border-bottom">Monto Renta</th>
+                <th class="border-bottom">Monto Venta</th>
+                <th class="border-bottom">Estatus Gravamen</th>
+
                 <th class="border-bottom"></th>
             </tr>
         </thead>
         <tbody>
+            {% for inmueble in objinmuebles %}
             <tr>
                 <td>
                     <div class="form-check dashboard-check">
@@ -71,55 +74,14 @@
                         </label>
                     </div>
                 </td>
-                <td><span class="fw-normal ">123456</span></td>
-                <td><span class="fw-normal">M&A</span></td>                        
+                <td><span class="fw-normal ">{{inmueble.alias_inmueble}}</span></td>
+                <td><span class="fw-normal">{{inmueble.estatus_inmueble}}</span></td>                        
                 <td>
-                    <span class="fw-normal">Carlos</span>
+                    <span class="fw-normal">{{inmueble.tipo_inmueble}}</span>
                 </td>
-                <td><span class="fw-normal">Grande</span></td>
-                <td><span class="fw-normal">123456</span></td>
-                <td>
-                <div class="btn-group">
-                    <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
-                        <span class="visually-hidden">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
-                        
-                        <a class="dropdown-item d-flex align-items-center" href="/vista-inmueble.html">
-                            <svg class="dropdown-icon text-gray-400 me-2" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg> Ver </a>
-                        <a class="dropdown-item d-flex align-items-center" href="/registro-inmueble.html">
-                            <svg class="dropdown-icon text-gray-400 me-2" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" clip-rule="evenodd"></path></svg>Editar</a>
-                    </div>
-                </div>
-                <svg onclick="alert0()"; class="icon icon-xs text-danger ms-1" title="Borrar" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" ></path></svg>
-            </td>
-            
-            </tr>
-          {% for persona in personas %}
-            <tr>
-                <td>
-                    <div class="form-check dashboard-check">
-                        <input class="form-check-input" type="checkbox" value="" id="userCheck1">
-                        <label class="form-check-label" for="userCheck1">
-                        </label>
-                    </div>
-                </td>
-                <td>
-                    <a href="#" class="d-flex align-items-center">
-                        <div class="d-block">
-                            <span class="fw-bold">{{persona.nombre}} {{persona.nombre1}}</span>
-                            <div class="small text-gray">{{persona.email}}</div>
-                        </div>
-                    </a>
-                </td>
-                <td><span class="fw-normal">10 Feb 2020</span></td>                        
-                <td>
-                    <span class="fw-normal d-flex align-items-center">
-                        {{persona.email}}
-                    </span>
-                </td>
-                <td><span class="fw-normal text-success">Active</span></td>
+                <td><span class="fw-normal">${{inmueble.renta}}</span></td>
+                <td><span class="fw-normal">${{inmueble.venta}}</span></td>
+                <td><span class="fw-normal">{{inmueble.estatus_gravamem}}</span></td>
                 <td>
                     <div class="btn-group">
                         <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -127,29 +89,26 @@
                             <span class="visually-hidden">Toggle Dropdown</span>
                         </button>
                         <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
-                            <a class="dropdown-item d-flex align-items-center" href="editarpm/{{persona.id}}">
-                                <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg>
-                                Edit Info
-                            </a>                        
+                            
+                            <a class="dropdown-item d-flex align-items-center" href="vistain/{{inmueble.id}}">
+                                <svg class="dropdown-icon text-gray-400 me-2" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path></svg> Ver </a>
+                            <a class="dropdown-item d-flex align-items-center" href="editarin/{{inmueble.id}}">
+                                <svg class="dropdown-icon text-gray-400 me-2" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" clip-rule="evenodd"></path></svg>Editar</a>
                         </div>
                     </div>
-
-
                     <div class="btn-group">
                         <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+                            <svg class="icon icon-xs text-danger ms-1" title="Borrar" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"><path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path></svg>
                             <span class="visually-hidden">Toggle Dropdown</span>
                         </button>
                         <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
-                            <a class="dropdown-item d-flex align-items-center" href="removerpm/{{persona.id}}">
-                                <svg class="icon icon-xs text-danger ms-1" title="Delete" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
-                                Delete Info
-                            </a>                        
+                            <a class="dropdown-item d-flex align-items-center" href="removerin/{{inmueble.id}}">
+                                <svg class="icon icon-xs text-danger ms-1" title="Borrar" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>Delete Info</a>
                         </div>
                     </div>
                 </td>
             </tr>
-          {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
     

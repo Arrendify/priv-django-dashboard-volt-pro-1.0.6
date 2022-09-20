@@ -5,6 +5,7 @@ Copyright (c) 2019 - present AppSeed.us
 
 from pyexpat import model
 from tabnanny import verbose
+from tkinter.tix import Tree
 from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.contrib.auth.models import User
@@ -29,6 +30,7 @@ class Profile(models.Model):
 
 class p_moral(models.Model):
     id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
     nombre=models.CharField(max_length=30, blank=True)
     nombre1=models.CharField(max_length=30,null=True, blank=True)
     apellido= models.CharField(max_length=30, null=True, blank=True)
@@ -114,6 +116,7 @@ class p_moral(models.Model):
 
 class p_fisica(models.Model):
     id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
     nombre=models.CharField(max_length=30, blank=True)
     nombre1=models.CharField(max_length=30,null=True, blank=True)
     apellido= models.CharField(max_length=30, null=True, blank=True)
@@ -199,48 +202,78 @@ class p_fisica(models.Model):
 
 class form_test(models.Model):
     id = models.AutoField(primary_key=True)
+    user=models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     nombre=models.CharField(max_length=30)
     nombre1=models.CharField(max_length=30)
 
+    class Meta:
+        db_table = 'PRUEBAS'
+
 class inmuebles(models.Model):
     id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL )
-    alies_inmueble = models.CharField(max_length=30, null=True, blank=True)
-    renta = models.CharField(max_length=30, null=True, blank=True)
-    valor_inmueble = models.CharField(max_length=30, null=True, blank=True)
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    alias_inmueble = models.CharField(max_length=30, null=True, blank=True)
+    estatus_inmueble = models.CharField(max_length=30, null=True, blank=True)
+    renta = models.PositiveIntegerField(null=True, blank=True)
+    venta = models.PositiveIntegerField(null=True, blank=True)
     clave_catastral = models.CharField(max_length=30, null=True, blank=True)
+    estatus_gravamem = models.CharField(max_length=30, null=True, blank=True)
+    valor_inmueble = models.PositiveIntegerField(null=True, blank=True)
+    cuota_mantenimiento= models.PositiveIntegerField(null=True, blank=True)
     tipo_inmueble = models.CharField(max_length=30, null=True, blank=True)
-    uso_inmubele= models.CharField(max_length=30, null=True, blank=True)
-    estatus = models.CharField(max_length=30, null=True, blank=True)
-    postal_code = models.CharField(max_length=30, null=True, blank=True)
+    uso_inmueble= models.CharField(max_length=30, null=True, blank=True)
+    op_compra = models.BooleanField(null=True, blank=True)
     municipio_alcaldia = models.CharField(max_length=30, null=True, blank=True)
     colonia = models.CharField(max_length=30, null=True, blank=True)
-    calle = models.CharField(max_length=30, null=True, blank=True)
+    postal_code = models.CharField(max_length=30, null=True, blank=True)
     estado  = models.CharField(max_length=30, null=True, blank=True)
+    calle = models.CharField(max_length=30, null=True, blank=True)
     numeroExterior = models.CharField(max_length=30, null=True, blank=True)
     numeroInterior = models.CharField(max_length=30, null=True, blank=True)
     calle1 = models.CharField(max_length=30, null=True, blank=True)
     calle2 = models.CharField(max_length=30, null=True, blank=True)
-    n_baños  = models.CharField(max_length=30, null=True, blank=True)
-    n_recamaras = models.CharField(max_length=30, null=True, blank=True)
+    referencias = models.CharField(max_length=30, null=True, blank=True)
+    n_baños = models.PositiveIntegerField(null=True, blank=True)
+    n_medios_baños = models.PositiveIntegerField(null=True, blank=True)
+    n_recamaras = models.PositiveIntegerField(null=True, blank=True)
+    n_pisos = models.PositiveIntegerField(null=True, blank=True)
+    estacionamiento_cajones = models.PositiveIntegerField(null=True, blank=True)
+    terrenoContruido  = models.PositiveIntegerField(null=True, blank=True)
+    terrenoTotal = models.PositiveIntegerField(null=True, blank=True)    
+    año_contruccion = models.PositiveIntegerField(null=True, blank=True)
     garaje = models.CharField(max_length=30, null=True, blank=True)
-    terrenoTotal = models.CharField(max_length=30, null=True, blank=True)
-    terrenoContruido  = models.CharField(max_length=30, null=True, blank=True)
-    jardin = models.CharField(max_length=30, null=True, blank=True)
-    estacionamiento = models.CharField(max_length=30, null=True, blank=True)
+    terraza =  models.CharField(max_length=30, null=True, blank=True)
+    alberca =  models.CharField(max_length=30, null=True, blank=True)
+    cocina =  models.CharField(max_length=30, null=True, blank=True)
+    amueblado = models.CharField(max_length=30, null=True, blank=True)
+    cuarto_lavado =models.CharField(max_length=30, null=True, blank=True)
     mascotas  = models.CharField(max_length=30, null=True, blank=True)
-    caracteristicasExtra= models.CharField(max_length=30, null=True, blank=True)
+    gym = models.CharField(max_length=30, null=True, blank=True)
+    bar = models.CharField(max_length=30, null=True, blank=True)
+    restaurante_bar=models.CharField(max_length=30, null=True, blank=True)
+    sala_cine = models.CharField(max_length=30, null=True, blank=True)
+    salon_estudio = models.CharField(max_length=30, null=True, blank=True)
+    area_comun = models.CharField(max_length=30, null=True, blank=True)
+    sala_juegos = models.CharField(max_length=30, null=True, blank=True)
+    salon_eventos = models.CharField(max_length=30, null=True, blank=True)
+    espacio_deportivo = models.CharField(max_length=30, null=True, blank=True)
+    busniess_center = models.CharField(max_length=30, null=True, blank=True)
+    roof_garden = models.CharField(max_length=30, null=True, blank=True)
+    otroA = models.CharField(max_length=30, null=True, blank=True)
     internet  = models.CharField(max_length=30, null=True, blank=True)
-    electricidad  = models.CharField(max_length=30, null=True, blank=True)
+    electricidad  = models.CharField(max_length=30, null=True, blank=True)    
+    agua_potable = models.CharField(max_length=30, null=True, blank=True)
     televisionCable = models.CharField(max_length=30, null=True, blank=True)
-    lineaTelefonica = models.CharField(max_length=30, null=True, blank=True)
-    camarasSeguridad  = models.CharField(max_length=30, null=True, blank=True)
-    drenaje = models.CharField(max_length=30, null=True, blank=True)
-    aguaPotable  = models.CharField(max_length=30, null=True, blank=True)
     gas = models.CharField(max_length=30, null=True, blank=True)
-    serviciosExtra = models.CharField(max_length=30, null=True, blank=True)
+    lineaTelefonica = models.CharField(max_length=30, null=True, blank=True)
+    drenaje = models.CharField(max_length=30, null=True, blank=True)
+    seguridad = models.CharField(max_length=30, null=True, blank=True)
+    camarasSeguridad  = models.CharField(max_length=30, null=True, blank=True)
+    area_juegos = models.CharField(max_length=30, null=True, blank=True)
+    otroS = models.CharField(max_length=30, null=True, blank=True)
     fotosInmueble = models.CharField(max_length=30, null=True, blank=True)
-
+    descripcion= models.CharField(max_length=30, null=True, blank=True)
+    terminos_condiciones = models.CharField(max_length=30, null=True, blank=True)
 
     class Meta:
         db_table = 'Inmuebles'

@@ -75,12 +75,10 @@
             <form action="{% url 'test' %}" method="post">
                 {% csrf_token %}
                 <div class="row">
-                    <h2 class="h5 mb-2">Ingresa Datos De La Persona Física</h2>
+                    <h2 class="h5 mb-2">Ingresa Datos De La Persona Física</h2>                
                         <div class="col-md-3 mb-3">
-                            <div>
                                 <label for="nombre">Primer Nombre</label>
                                 <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Ingresa tu Primer Nombre" >
-                            </div>
                         </div>
                         <div class="col-md-3 mb-3">
                                 <label for="nombre1">Segundo Nombre</label>
