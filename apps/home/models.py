@@ -271,6 +271,7 @@ class inmuebles(models.Model):
     camarasSeguridad  = models.CharField(max_length=30, null=True, blank=True)
     area_juegos = models.CharField(max_length=30, null=True, blank=True)
     otroS = models.CharField(max_length=30, null=True, blank=True)
+    imagenes=models.ImageField('imagenes', upload_to='fotos', blank=True)
     fotosInmueble = models.CharField(max_length=30, null=True, blank=True)
     descripcion= models.CharField(max_length=30, null=True, blank=True)
     terminos_condiciones = models.CharField(max_length=30, null=True, blank=True)
