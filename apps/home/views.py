@@ -149,14 +149,15 @@ def verInmueble(request, id):
 
 def editarInmueble(request, id):
     objin = inmuebles.objects.get(id = id)
-    form = InmueblesForm(request.POST or None, instance=objin)
-    print(request.POST)
-    if form.is_valid():
-        print("valido")
-        formin = form.save(commit=False)
-        formin.user = request.user        
-        formin.save()
-        return redirect('/listarinmuebles')      
+    if request.method=='POST':
+        form = InmueblesForm(request.POST or None, instance=objin)
+        print(request.POST)
+        if form.is_valid():
+            print("valido")
+            formin = form.save(commit=False)
+            formin.user = request.user        
+            formin.save()
+            return redirect('/listarinmuebles')      
           
     context={'objin':objin}
  
