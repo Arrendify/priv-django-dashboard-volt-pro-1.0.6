@@ -3,6 +3,7 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
+from calendar import c
 from pyexpat import model
 from tabnanny import verbose
 from tkinter.tix import Tree
@@ -211,7 +212,7 @@ class form_test(models.Model):
 
 class inmuebles(models.Model):
     id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     alias_inmueble = models.CharField(max_length=30, null=True, blank=True)
     estatus_inmueble = models.CharField(max_length=30, null=True, blank=True)
     renta = models.PositiveIntegerField(null=True, blank=True)
@@ -222,7 +223,7 @@ class inmuebles(models.Model):
     cuota_mantenimiento= models.PositiveIntegerField(null=True, blank=True)
     tipo_inmueble = models.CharField(max_length=30, null=True, blank=True)
     uso_inmueble= models.CharField(max_length=30, null=True, blank=True)
-    op_compra = models.BooleanField(null=True, blank=True)
+    op_compra = models.CharField(max_length=30, null=True, blank=True)
     municipio_alcaldia = models.CharField(max_length=30, null=True, blank=True)
     colonia = models.CharField(max_length=30, null=True, blank=True)
     postal_code = models.CharField(max_length=30, null=True, blank=True)
@@ -271,7 +272,7 @@ class inmuebles(models.Model):
     camarasSeguridad  = models.CharField(max_length=30, null=True, blank=True)
     area_juegos = models.CharField(max_length=30, null=True, blank=True)
     otroS = models.CharField(max_length=30, null=True, blank=True)
-    imagenes=models.ImageField('imagenes', upload_to='fotos', blank=True)
+    # imagenes=models.ImageField(upload_to='imagenes', upload_to='fotos', blank=True)
     fotosInmueble = models.CharField(max_length=30, null=True, blank=True)
     descripcion= models.CharField(max_length=30, null=True, blank=True)
     terminos_condiciones = models.CharField(max_length=30, null=True, blank=True)
@@ -279,8 +280,27 @@ class inmuebles(models.Model):
     class Meta:
         db_table = 'Inmuebles'
 
+# class productos(models.Model):
+#     id = models.AutoField(primary_key=True)
+#     tipo_producto = models.CharField(max_length=30, null=True, blank=True)
+#     nombre_producto = models.CharField(max_length=30, null=True, blank=True) 
+#     categoria_producto = models.CharField(max_length=50, null=True, blank=True)
+#     etiqueta_producto = models.CharField(max_length=50, null=True, blank=True)
+#     costo_producto = models.CharField(max_length=50, null=True, blank=True)
+#     descripción_producto = models.CharField(max_length=50, null=True, blank=True)
 
+#     class Meta:
+#         db_table = 'Productos'
 
+# class paquetes(models.Model):
+#     id = models.AutoField(primary_key=True)
+#     producto = models.ForeignKey(productos, null = True, blank = True, on_delete=models.CASCADE)
+#     tipo_paquete = models.CharField(max_length=30, null=True, blank=True)
+#     nombre_paquete = models.CharField(max_length=30, null=True, blank=True) 
+#     categoria_paquete = models.CharField(max_length=50, null=True, blank=True)
+#     etiqueta_paquete = models.CharField(max_length=50, null=True, blank=True)
+#     costo_paquete = models.CharField(max_length=50, null=True, blank=True)
+#     descripción_paquete = models.CharField(max_length=50, null=True, blank=True)
 
-
-  
+#     class Meta:
+#         db_table = 'Paquetes'
