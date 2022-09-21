@@ -68,9 +68,8 @@
                         <label for="ubicacion">Ubicación</label>
                         <input type="text" id="ubicacion" class="form-control" value="{{verinmueble.municipio_alcaldia}} {{verinmueble.colonia}} {{verinmueble.postal_code}} {{verinmueble.estado}} {{verinmueble.calle}} {{verinmueble.numeroExterior}}" disabled>
                     </div>
-                    <div class="col-md-6 mb-3 " >
-                        <input class="form-check-input" type="checkbox" id="o_venta" disabled checked>
-                        <label class="form-check-label" for="o_venta">En Renta con opción a Venta</label>
+                    <div class="col-md-6 mb-3 " id="op_compra">
+                        <label class="form-check-label" for="op_compra">En Renta con opción a Venta</label>
                     </div>
                 </div>
                     <div class="col-md-6">
@@ -150,130 +149,100 @@
                 <div class="col-md-6 mb-2 ">
                     <div class="row">
                         <h2 class="h5 mb-2">Amenidades</h2>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="a_garage" checked disabled>
-                            <label class="form-check-label" for="a_garage">Garage</label>
+                        <div class="col-md-4" id="garaje">
+                            <label class="form-check-label" for="garaje">Garaje</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="a_terraza" disabled>
-                            <label class="form-check-label" for="a_terraza">Terraza</label>
+                        <div class="col-md-4" id="terraza">
+                            <label class="form-check-label" for="terraza">Terraza</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="a_alberca" disabled>
-                            <label class="form-check-label" for="a_alberca">Alberca</label>
+                        <div class="col-md-4" id="alberca">
+                            <label class="form-check-label" for="alberca">Alberca</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="a_cocina" disabled>
-                            <label class="form-check-label" for="a_cocina">Cocina</label>
+                        <div class="col-md-4" id="cocina">
+                            <label class="form-check-label" for="cocina">Cocina</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="a_amueblado" disabled>
-                            <label class="form-check-label" for="a_mueblado">Amueblado</label>
+                        <div class="col-md-4" id="amueblado">
+                            <label class="form-check-label" for="amueblado">Amueblado</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="a_c_lavado" disabled>
-                            <label class="form-check-label" for="a_c_lavado">Cuarto de Lavado</label>
+                        <div class="col-md-4" id="cuarto_lavado" >
+                            <label class="form-check-label" for="cuarto_lavado">Cuarto de Lavado</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="a_mascotas" disabled>
-                            <label class="form-check-label" for="a_mascotas">Mascotas</label>
+                        <div class="col-md-4" id="mascotas" >
+                            <label class="form-check-label" for="mascotas">Mascotas</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="gym" disabled>
+                        <div class="col-md-4" id="gym">
                             <label class="form-check-label" for="gym">Gym</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="bar" disabled>
+                        <div class="col-md-4" id="bar">
                             <label class="form-check-label" for="bar">Bar</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="r_bar" disabled>
-                            <label class="form-check-label" for="r_bar">Restaurante Bar</label>
+                        <div class="col-md-4" id="restaurante_bar" >
+                            <label class="form-check-label" for="restaurante_bar">Restaurante Bar</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="s_cine" disabled>
-                            <label class="form-check-label" for="s_cine">Sala de Cine</label>
+                        <div class="col-md-4" id="sala_cine" >
+                            <label class="form-check-label" for="sala_cine">Sala de Cine</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="c_estudios" disabled>
-                            <label class="form-check-label" for="c_estudios">Cuarto de Estudios</label>
+                        <div class="col-md-4" id="salon_estudio">
+                            <label class="form-check-label" for="salon_estudio">Cuarto de Estudios</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="a_comun" disabled>
-                            <label class="form-check-label" for="a_comun">Área comun</label>
+                        <div class="col-md-4" id="area_comun">
+                            <label class="form-check-label" for="area_comun">Área comun</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="s_juegos" disabled>
-                            <label class="form-check-label" for="s_juegos">Sala de Juegos</label>
+                        <div class="col-md-4" id="sala_juegos">
+                            <label class="form-check-label" for="sala_juegos">Sala de Juegos</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="s_eventos" disabled>
-                            <label class="form-check-label" for="s_eventos">Salón de Eventos</label>
+                        <div class="col-md-4" id="salon_eventos">
+                            <label class="form-check-label" for="salon_eventos">Salón de Eventos</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="c_deportivas" disabled>
-                            <label class="form-check-label" for="c_deportivas">Canchas Deportivas</label>
+                        <div class="col-md-4" id="espacio_deportivo">
+                            <label class="form-check-label" for="espacio_deportivo">Canchas Deportivas</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="b_center" disabled>
-                            <label class="form-check-label" for="b_center">Business Center</label>
+                        <div class="col-md-4" id="busniess_center">
+                            <label class="form-check-label" for="busniess_center">Business Center</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="r_garden" disabled>
-                            <label class="form-check-label" for="r_garden">Roof Garden</label>
+                        <div class="col-md-4" id="roof_garden">
+                            <label class="form-check-label" for="roof_garden">Roof Garden</label>
                         </div>
-                        <div class="col-md-4" >
-                            <input class="form-check-input" type="checkbox" title="Especifique en la descripción" data-bs-toggle="tooltip" data-bs-placement="right" disabled>
-                            <label class="form-check-label" for="otro" >Otro</label>
+                        <div class="col-md-4" id="otroA">
+                            <label class="form-check-label" for="otroA" >Otro</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-2 ">
                     <div class="row">
                         <h2 class="h5 mb-2">Servicios</h2>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="wifi" disabled>
-                            <label class="form-check-label" for="wifi">Internet/Wifi</label>
+                        <div class="col-md-4" id="internet">
+                            <label class="form-check-label" for="internet">Internet/Wifi</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="energia" disabled>
-                            <label class="form-check-label" for="energia">Energía Eléctrica</label>
+                        <div class="col-md-4" id="electricidad">
+                            <label class="form-check-label" for="electricidad">Energía Eléctrica</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="a_potable" disabled>
-                            <label class="form-check-label" for="a_potable">Agua Potable</label>
+                        <div class="col-md-4" id="agua_potable">
+                            <label class="form-check-label" for="agua_potable">Agua Potable</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="t_cable" disabled>
-                            <label class="form-check-label" for="t_cable">Tele por Cable</label>
+                        <div class="col-md-4" id="televisionCable">
+                            <label class="form-check-label" for="televisionCable">Tele por Cable</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="gas" disabled>
+                        <div class="col-md-4" id="gas" >
                             <label class="form-check-label" for="gas">Gas</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="l_telefonica" disabled>
-                            <label class="form-check-label" for="l_telefonica">Línea Telefónica</label>
+                        <div class="col-md-4" id="lineaTelefonica" >
+                            <label class="form-check-label" for="lineaTelefonica">Línea Telefónica</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="drenaje" disabled>
+                        <div class="col-md-4" id="drenaje">
                             <label class="form-check-label" for="drenaje">Drenaje</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="seguridad" disabled>
+                        <div class="col-md-4" id="seguridad">
                             <label class="form-check-label" for="seguridad">Seguridad</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="c_cerrado" disabled>
-                            <label class="form-check-label" for="c_cerrado">Circuito Cerrado</label>
+                        <div class="col-md-4" id="camarasSeguridad">
+                            <label class="form-check-label" for="camarasSeguridad">Circuito Cerrado</label>
                         </div>
-                        <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" id="a_juegos" disabled>
-                            <label class="form-check-label" for="a_juegos">Área de juegos</label>
+                        <div class="col-md-4" id="area_juegos" >
+                            <label class="form-check-label" for="area_juegos">Área de juegos</label>
                         </div>
-                        <div class="col-md-4" >
-                            <input class="form-check-input" type="checkbox" value="" id="otro" disabled>
-                            <label class="form-check-label" for="otro" >Otro</label>
+                        <div class="col-md-4" id="otroS" >
+                            <label class="form-check-label" for="otroS" >Otro</label>
                         </div>
                     </div>
                 </div>
@@ -357,251 +326,32 @@
 </script>
 
 <script>
-        const AyS = document.createElement("h1");
-        AyS.setAttribute("class","form-check-input");
-        AyS.setAttribute("type","checkbox");
-        AyS.setAttribute("disabled","");
-        console.log(AyS);
-        const $garage=document.getElementById("a_garage");
-        Vgarage='{{inmuebe.garage}}';
-        if(Vgarage=="on"){
-            AyS.setAttribute("checked","");
-            $garage.prepend(AyS);
-        }else if (Vgarage!="on") {
-            AyS.innerHTML =Vgarage;
-            $garage.prepend(AyS);}
-        const $cocina=document.getElementById("a_cocina");
-        Vcocina='{{inmuebe.cocina}}';
-        if(Vcocina=="on"){
-            AyS.setAttribute("checked","");
-            $cocina.prepend(AyS);
-        }else if (Vcocina!="on") {
-            AyS.innerHTML =Vcocina;
-            $cocina.prepend(AyS);}
-        const $mascotas=document.getElementById("a_mascotas");
-        Vmascotas='{{inmuebe.mascotas}}';
-        if(Vmascotas=="on"){
-            AyS.setAttribute("checked","");
-            $mascotas.prepend(AyS);
-        }else if (Vmascotas!="on") {
-            AyS.innerHTML =Vmascotas;
-            $mascotas.prepend(AyS);}
-        const $rbar=document.getElementById("a_rbar");
-        Vrbar='{{inmuebe.rbar}}';
-        if(Vrbar=="on"){
-            AyS.setAttribute("checked","");
-            $rbar.prepend(AyS);
-        }else if (Vrbar!="on") {
-            AyS.innerHTML =Vrbar;
-            $rbar.prepend(AyS);}
-        const $acomun=document.getElementById("a_acomun");
-        Vacomun='{{inmuebe.acomun}}';
-        if(Vacomun=="on"){
-            AyS.setAttribute("checked","");
-            $acomun.prepend(AyS);
-        }else if (Vacomun!="on") {
-            AyS.innerHTML =Vacomun;
-            $acomun.prepend(AyS);}
-        const $canchas=document.getElementById("a_canchas");
-        Vcanchas='{{inmuebe.canchas}}';
-        if(Vcanchas=="on"){
-            AyS.setAttribute("checked","");
-            $canchas.prepend(AyS);
-        }else if (Vcanchas!="on") {
-            AyS.innerHTML =Vcanchas;
-            $canchas.prepend(AyS);}
-        const $terraza=document.getElementById("a_terraza");
-        Vterraza='{{inmuebe.terraza}}';
-        if(Vterraza=="on"){
-            AyS.setAttribute("checked","");
-            $terraza.prepend(AyS);
-        }else if (Vterraza!="on") {
-            AyS.innerHTML =Vterraza;
-            $canchas.prepend(AyS);}
-        const $amueblado=document.getElementById("a_amueblado");
-        Vamueblado='{{inmuebe.amueblado}}';
-        if(Vamueblado=="on"){
-            AyS.setAttribute("checked","");
-            $amueblado.prepend(AyS);
-        }else if (Vamueblado!="on") {
-            AyS.innerHTML =Vamueblado;
-            $canchas.prepend(AyS);}
-        const $gym=document.getElementById("a_gym");
-        Vgym='{{inmuebe.gym}}';
-        if(Vgym=="on"){
-            AyS.setAttribute("checked","");
-            $gym.prepend(AyS);
-        }else if (Vgym!="on") {
-            AyS.innerHTML =Vgym;
-            $canchas.prepend(AyS);}
-        const $scine=document.getElementById("a_scine");
-        Vscine='{{inmuebe.scine}}';
-        if(Vscine=="on"){
-            AyS.setAttribute("checked","");
-            $scine.prepend(AyS);
-        }else if (Vscine!="on") {
-            AyS.innerHTML =Vscine;
-            $canchas.prepend(AyS);}
-        const $sjuegos=document.getElementById("a_sjuegos");
-        Vsjuegos='{{inmuebe.sjuegos}}';
-        if(Vsjuegos=="on"){
-            AyS.setAttribute("checked","");
-            $sjuegos.prepend(AyS);
-        }else if (Vsjuegos!="on") {
-            AyS.innerHTML =Vsjuegos;
-            $canchas.prepend(AyS);}
-        const $bcenter=document.getElementById("a_bcenter");
-        Vbcenter='{{inmuebe.bcenter}}';
-        if(Vbcenter=="on"){
-            AyS.setAttribute("checked","");
-            $bcenter.prepend(AyS);
-        }else if (Vbcenter!="on") {
-            AyS.innerHTML =Vbcenter;
-            $canchas.prepend(AyS);}
-        const $alberca=document.getElementById("a_alberca");
-        Valberca='{{inmuebe.alberca}}';
-        if(Valberca=="on"){
-            AyS.setAttribute("checked","");
-            $alberca.prepend(AyS);
-        }else if (Valberca!="on") {
-            AyS.innerHTML =Valberca;
-            $canchas.prepend(AyS);}
-        const $lavado=document.getElementById("a_lavado");
-        Vlavado='{{inmuebe.lavado}}';
-        if(Vlavado=="on"){
-            AyS.setAttribute("checked","");
-            $lavado.prepend(AyS);
-        }else if (Vlavado!="on") {
-            AyS.innerHTML =Vlavado;
-            $canchas.prepend(AyS);}
-        const $bar=document.getElementById("a_bar");
-        Vbar='{{inmuebe.bar}}';
-        if(Vbar=="on"){
-            AyS.setAttribute("checked","");
-            $bar.prepend(AyS);
-        }else if (Vbar!="on") {
-            AyS.innerHTML =Vbar;
-            $canchas.prepend(AyS);}
-        const $estudios=document.getElementById("a_estudios");
-        Vestudios='{{inmuebe.estudios}}';
-        if(Vestudios=="on"){
-            AyS.setAttribute("checked","");
-            $estudios.prepend(AyS);
-        }else if (Vestudios!="on") {
-            AyS.innerHTML =Vestudios;
-            $canchas.prepend(AyS);}
-        const $eventos=document.getElementById("a_eventos");
-        Veventos='{{inmuebe.eventos}}';
-        if(Veventos=="on"){
-            AyS.setAttribute("checked","");
-            $eventos.prepend(AyS);
-        }else if (Veventos!="on") {
-            AyS.innerHTML =Veventos;
-            $canchas.prepend(AyS);}
-        const $rgarden=document.getElementById("a_rgarden");
-        Vrgarden='{{inmuebe.rgarden}}';
-        if(Vrgarden=="on"){
-            AyS.setAttribute("checked","");
-            $rgarden.prepend(AyS);
-        }else if (Vrgarden!="on") {
-            AyS.innerHTML =Vrgarden;
-            $canchas.prepend(AyS);}
-        const $otroa=document.getElementById("a_otroa");
-        Votroa='{{inmuebe.otroa}}';
-        if(Votroa=="on"){
-            AyS.setAttribute("checked","");
-            $otroa.prepend(AyS);
-        }else if (Votroa!="on") {
-            AyS.innerHTML =Votroa;
-            $canchas.prepend(AyS);}
-        const $internet=document.getElementById("a_internet");
-        Vinternet='{{inmuebe.internet}}';
-        if(Vinternet=="on"){
-            AyS.setAttribute("checked","");
-            $internet.prepend(AyS);
-        }else if (Vinternet!="on") {
-            AyS.innerHTML =Vinternet;
-            $canchas.prepend(AyS);}
-        const $cable=document.getElementById("a_cable");
-        Vcable='{{inmuebe.cable}}';
-        if(Vcable=="on"){
-            AyS.setAttribute("checked","");
-            $cable.prepend(AyS);
-        }else if (Vcable!="on") {
-            AyS.innerHTML =Vcable;
-            $canchas.prepend(AyS);}
-        const $drenaje=document.getElementById("a_drenaje");
-        Vdrenaje='{{inmuebe.drenaje}}';
-        if(Vdrenaje=="on"){
-            AyS.setAttribute("checked","");
-            $drenaje.prepend(AyS);
-        }else if (Vdrenaje!="on") {
-            AyS.innerHTML =Vdrenaje;
-            $canchas.prepend(AyS);}
-        const $ajuegos=document.getElementById("a_ajuegos");
-        Vajuegos='{{inmuebe.ajuegos}}';
-        if(Vajuegos=="on"){
-            AyS.setAttribute("checked","");
-            $ajuegos.prepend(AyS);
-        }else if (Vajuegos!="on") {
-            AyS.innerHTML =Vajuegos;
-            $canchas.prepend(AyS);}
-        const $energiae=document.getElementById("a_energiae");
-        Venergiae='{{inmuebe.energiae}}';
-        if(Venergiae=="on"){
-            AyS.setAttribute("checked","");
-            $energiae.prepend(AyS);
-        }else if (Venergiae!="on") {
-            AyS.innerHTML =Venergiae;
-            $canchas.prepend(AyS);}
-        const $gas=document.getElementById("a_gas");
-        Vgas='{{inmuebe.gas}}';
-        if(Vgas=="on"){
-            AyS.setAttribute("checked","");
-            $gas.prepend(AyS);
-        }else if (Vgas!="on") {
-            AyS.innerHTML =Vgas;
-            $canchas.prepend(AyS);}
-        const $seguridad=document.getElementById("a_seguridad");
-        Vseguridad='{{inmuebe.seguridad}}';
-        if(Vseguridad=="on"){
-            AyS.setAttribute("checked","");
-            $seguridad.prepend(AyS);
-        }else if (Vseguridad!="on") {
-            AyS.innerHTML =Vseguridad;
-            $canchas.prepend(AyS);}
-        const $apotable=document.getElementById("a_apotable");
-        Vapotable='{{inmuebe.apotable}}';
-        if(Vapotable=="on"){
-            AyS.setAttribute("checked","");
-            $apotable.prepend(AyS);
-        }else if (Vapotable!="on") {
-            AyS.innerHTML =Vapotable;
-            $canchas.prepend(AyS);}
-        const $lineat=document.getElementById("a_lineat");
-        Vlineat='{{inmuebe.lineat}}';
-        if(Vlineat=="on"){
-            AyS.setAttribute("checked","");
-            $lineat.prepend(AyS);
-        }else if (Vlineat!="on") {
-            AyS.innerHTML =Vlineat;
-            $canchas.prepend(AyS);}
-        const $ccerrado=document.getElementById("a_ccerrado");
-        Vccerrado='{{inmuebe.ccerrado}}';
-        if(Vccerrado=="on"){
-            AyS.setAttribute("checked","");
-            $ccerrado.prepend(AyS);
-        }else if (Vccerrado!="on") {
-            AyS.innerHTML =Vccerrado;
-            $canchas.prepend(AyS);}
-        const $otros=document.getElementById("a_otros");
-        Votros='{{inmuebe.otros}}';
-        if(Votros=="on"){
-            AyS.setAttribute("checked","");
-            $otros.prepend(AyS);
-        }else if (Votros!="on") {
-            AyS.innerHTML =Votros;
-            $canchas.prepend(AyS);}
+    
+    const checks = ["garaje","terraza","alberca","cocina","amueblado","cuarto_lavado","mascotas","gym","bar","restaurante_bar","sala_cine","salon_estudio","area_comun","sala_juegos","salon_eventos","espacio_deportivo","busniess_center","roof_garden","otroA","internet","electricidad","agua_potable","televisionCable","gas","lineaTelefonica","drenaje","seguridad","camarasSeguridad","area_juegos","otroS","op_compra"];
+
+    const valores=['{{verinmueble.garaje}}','{{verinmueble.terraza}}','{{verinmueble.alberca}}','{{verinmueble.cocina}}','{{verinmueble.amueblado}}','{{verinmueble.cuarto_lavado}}','{{verinmueble.mascotas}}','{{verinmueble.gym}}','{{verinmueble.bar}}','{{verinmueble.restaurante_bar}}','{{verinmueble.sala_cine}}','{{verinmueble.salon_estudio}}','{{verinmueble.area_comun}}','{{verinmueble.sala_juegos}}','{{verinmueble.salon_eventos}}','{{verinmueble.espacio_deportivo}}','{{verinmueble.busniess_center}}','{{verinmueble.roof_garden}}','{{verinmueble.otroA}}','{{verinmueble.internet}}','{{verinmueble.electricidad}}','{{verinmueble.agua_potable}}','{{verinmueble.televisionCable}}','{{verinmueble.gas}}','{{verinmueble.lineaTelefonica}}','{{verinmueble.drenaje}}','{{verinmueble.seguridad}}','{{verinmueble.camarasSeguridad}}','{{verinmueble.area_juegos}}','{{verinmueble.otroS}}','{{verinmueble.op_compra}}'];
+    const AyS = checks.map(function(x){
+        x = document.createElement("input");
+        x.setAttribute("class","form-check-input");
+        x.setAttribute("type","checkbox");
+        x.setAttribute("disabled","");
+        return x;
+    });
+    console.log(valores);
+    const $inputc = checks.map(function(x){
+        let y=document.getElementById(x);
+        return y;}
+    );
+
+    for(var i=0;i<valores.length;i++){
+        AyS[i].setAttribute("id",checks[i]);
+        if(valores[i]=='on'){
+            AyS[i].setAttribute("checked","");
+            $inputc[i].prepend(AyS[i]);
+        }else if(valores[i]!='on'){
+            $inputc[i].prepend(AyS[i]);}
+    };
+        
 </script>
 
 {% endblock javascripts %}
