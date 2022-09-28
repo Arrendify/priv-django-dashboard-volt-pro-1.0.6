@@ -40,26 +40,47 @@
               </span>
               <input type="text" class="form-control" placeholder="Buscar Inmuebles ID">
             </div>
-            <select class="form-select fmxw-200 d-none d-md-inline" aria-label="Message select example 2">
-                <option selected>Estatus</option>
-                <option value="1">Renta</option>
-                <option value="2">Disponible</option>
-                <option value="3">Venta</option>
-            </select>
+            
         </div>
     </div>
 </div>
 <div class="card card-body shadow border-0 table-wrapper table-responsive">
-    <table class="table user-table table-hover align-items-center mb-5"> <!--id="datatable"-->
+    <div class="row">
+        <div class="mb-2 col-md-2">
+            <form name="ejemplo2" method="POST" target="_blank" action="pagina.htm">
+                <select class="form-select fmxw-200 d-none d-md-inline" name="tipos" onChange="filtro(this.form)">
+                    <option label="Estaus" hidden></option>
+                    <option value="1" >Renta</option>
+                    <option value="2">Disponible</option>
+                    <option value="3">Venta</option>
+                    <option value="4">Oficina</option>
+                </select>
+        </div>
+        <div class="mb-2 col-md-10" id="filtros">
+        </div>
+    </div>
+    <table class="table user-table table-hover align-items-center mb-5" id="datatable">
         <thead>
             <tr >
                 <th class="border-bottom"></th>
-                <th class="border-bottom">Alias del Inmueble</th>
-                <th class="border-bottom">Estatus del Inmueble</th>
-                <th class="border-bottom">Tipo de Inmueble</th>
-                <th class="border-bottom">Monto Renta</th>
-                <th class="border-bottom">Monto Venta</th>
-                <th class="border-bottom">Estatus Gravamen</th>
+                <th class="border-bottom">Alias del Inmueble<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up ms-3" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
+                  </svg></th>
+                <th class="border-bottom">Estatus del Inmueble<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up ms-3" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
+                  </svg></th>
+                <th class="border-bottom">Tipo de Inmueble<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up ms-3" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
+                  </svg></th>
+                <th class="border-bottom">Monto Renta<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up ms-3" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
+                  </svg></th>
+                <th class="border-bottom">Monto Venta<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up ms-3" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
+                  </svg></th>
+                <th class="border-bottom">Estatus Gravamen<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up ms-3" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5zm-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5z"/>
+                  </svg></th>
 
                 <th class="border-bottom"></th>
             </tr>
@@ -102,8 +123,8 @@
                             <span class="visually-hidden">Toggle Dropdown</span>
                         </button>
                         <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
-                            <a class="dropdown-item d-flex align-items-center" href="removerin/{{inmueble.id}}">
-                                <svg class="icon icon-xs text-danger ms-1" title="Borrar" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>Delete Info</a>
+                            <a class="dropdown-item d-flex align-items-center" id="confirm" onclick="alert0('removerin/{{inmueble.id}}');">
+                                <svg class="icon icon-xs text-danger ms-1" title="Borrar" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" ></path></svg>Delete Info</a>
                         </div>
                     </div>
                 </td>
@@ -119,7 +140,29 @@
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %} 
 <script>
-    function alert0(){
+    var option=["","Renta  X","Disponible  X","Venta  X","Oficina  X"];
+    const opselect = option.map(function(x){
+        let y=false;
+        return y;}
+    );
+    function filtro(form){
+        filter = document.createElement("input");
+        filter.setAttribute("class","btn btn-sm btn-secondary me-1");
+        filter.setAttribute("type","button");
+        let $filter=document.getElementById("filtros");
+        var selec = form.tipos.options;
+        for(var j=1;j<selec.length;j++){
+            if(selec[j].selected==true && opselect[j]!=true){
+                filter.setAttribute("id",option[j]);
+                filter.setAttribute("value",option[j]);
+                var ax="removef('"+option[j]+"')";
+                filter.setAttribute("onclick",ax);
+                opselect[j]=true;
+                $filter.prepend(filter);
+    }}}
+    function removef(x){
+    }
+    function alert0(ref){
         Swal.fire({
             title: '¿Éstas seguro?',
             text: "No podrás revertir esta acción",
@@ -131,46 +174,14 @@
             cancelButtonText: 'Cancelar'
         }).then((result) => {
         if (result.isConfirmed) {
+            //setTimeout(function(){ window.location.assign(ref); }, 1000);
             Swal.fire(
             '¡Eliminado!',
             'Este inmueble ha sido eliminado',
             'success'
-        )}
-    })}
-    function alert1(){
-        const swalWithBootstrapButtons = Swal.mixin({customClass: {
-            confirmButton: 'btn btn-success ms-3',
-            cancelButton: 'btn btn-danger me-3'
-        },
-        buttonsStyling: false
-        })
-
-        swalWithBootstrapButtons.fire({
-            title: 'Guardar Datos',
-            text: "¿Estas seguro de que quieres continuar?",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Si, guardar',
-            cancelButtonText: '!No, cancelar¡',
-            reverseButtons: true
-        }).then((result) => {
-        if (result.isConfirmed) {
-            swalWithBootstrapButtons.fire(
-            '¡Guardado con éxito!',
-            'Tus datos han sido guardados correctamente',
-            'success'
-        )} else if (
-        /* Read more about handling dismissals below */
-            result.dismiss === Swal.DismissReason.cancel
-        ){
-        swalWithBootstrapButtons.fire(
-            'Cancelado',
-            'Ésta acción ha sido cancelada',
-            'error'
-        )
+        );
     }
-})}
-
+    })}
 </script>
 
 {% endblock javascripts %}

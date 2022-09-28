@@ -95,7 +95,7 @@
                             <svg class="icon icon-xs text-danger ms-1" title="Delete" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg><span class="visually-hidden">Toggle Dropdown</span>
                         </button>
                         <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
-                            <a class="dropdown-item d-flex align-items-center" href="removerpf/{{persona.id}}">
+                            <a class="dropdown-item d-flex align-items-center" onclick="alert0('removerpf/{{persona.id}}');">
                                 <svg class="icon icon-xs text-danger ms-1" title="Delete" data-bs-toggle="tooltip" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path></svg>
                                 Delete Info
                             </a>                        
@@ -112,4 +112,28 @@
 
 <!-- Specific Page JS goes HERE  -->
 {% block javascripts %}
+
+<script>
+    function alert0(ref){
+        Swal.fire({
+            title: '¿Éstas seguro?',
+            text: "No podrás revertir esta acción",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, elimina esto',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            setTimeout(function(){ window.location.assign(ref); }, 1000);
+            Swal.fire(
+            '¡Registro Eliminado!',
+            'Este registro ha sido eliminado',
+            'success'
+        );
+    }
+    })}
+</script>
+
 {% endblock javascripts %}

@@ -15,7 +15,7 @@
                     Registar Nuevo Inmueble
                 </button>
                 <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
-                    <a href="/tabla-inmuebles.html" class="dropdown-item d-flex align-items-center" href="#">
+                    <a href="/listarinmuebles" class="dropdown-item d-flex align-items-center" href="#">
                         <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 12v-2h3v2H6z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM3 9h10v1h-3v2h3v1h-3v2H9v-2H6v2H5v-2H3v-1h2v-2H3V9z" clip-rule="evenodd"></path></svg>
                         Modulo Vista General de Inmueble
                     </a>
@@ -39,11 +39,11 @@
                                 </div>
                                 <div class="col-md-6 mb-3"><!---->
                                     <label for="estatus_inmueble">Estatus del Inmueble </label>
-                                    <select class="form-select" id="estatus_inmueble" name="estatus_inmueble" aria-label="Default select example" value="{{objin.estatus_inmueble}}" required>
-                                        <option hidden>Estatus</option>
+                                    <select class="form-select" id="estatus_inmueble" name="estatus_inmueble"   required>
+                                        <option value="{{objin.estatus_inmueble}}" label="{{objin.estatus_inmueble}}"hidden>Estatus</option>
                                         <option value="Renta">Ocupado</option>
-                                        <option value="Venta">Disponible</option>
-                                        <option value="reparacion">Reparación</option>
+                                        <option value="Disponible">Disponible</option>
+                                        <option value="Reparación">Reparación</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6 mb-3">
@@ -53,31 +53,32 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="estatus_gravamem">Estatus del Gravamen</label>
                                     <select class="form-select" id="estatus_gravamem" name="estatus_gravamem" aria-label="Default select example" title="Impuesto aplicado a un inmueble o propiedad que indica que se encuentra comprometido" data-bs-toggle="tooltip" data-bs-placement="bottom" value="{{objin.estatus_gravamem}}" required>
-                                        <option value="ninguno">Ninguno</option>
-                                        <option value="usufructo">Usufructo</option>
-                                        <option value="hipoteca">Hipoteca</option>
+                                        <option value="{{objin.estatus_gravamem}}" label="{{objin.estatus_gravamem}}" hidden></option>
+                                        <option value="Ninguno">Ninguno</option>
+                                        <option value="Usufructo">Usufructo</option>
+                                        <option value="Hipoteca">Hipoteca</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="tipo_inmueble">Tipo de Inmueble</label>
                                     <select class="form-select" id="tipo_inmueble" name="tipo_inmueble" aria-label="Default select example" value="{{objin.tipo_inmueble}}" required>
-                                        <option hidden>Tipo de Inmueble</option>
-                                        <option value="casa">Casa</option>
-                                        <option value="departamento">Departamento</option>
-                                        <option value="local">Local</option>
-                                        <option value="oficina">Oficina</option>
-                                        <option value="bodega">Bodega</option>
-                                        <option value="condominios">Condominios</option>
-                                        <option value="duplex">Duplex</option>+
+                                        <option value="{{objin.tipo_inmueble}}" label="{{objin.tipo_inmueble}}" hidden></option>
+                                        <option value="Casa">Casa</option>
+                                        <option value="Departamento">Departamento</option>
+                                        <option value="Local">Local</option>
+                                        <option value="Oficina">Oficina</option>
+                                        <option value="Bodega">Bodega</option>
+                                        <option value="Condominios">Condominios</option>
+                                        <option value="Duplex">Duplex</option>
                                     </select>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="uso_inmueble">Uso del Inmueble</label>
                                     <select class="form-select" id="uso_inmueble" name="uso_inmueble" aria-label="Default select example" value="{{objin.uso_inmueble}}" required>
-                                        <option hidden>Uso del Inmueble</option>
-                                        <option value="residencial">Residencial</option>
-                                        <option value="comercial">Comercial</option>
-                                        <option value="t_baldio">Terreno Baldio</option>+
+                                        <option value="{{objin.uso_inmueble}}" label="{{objin.uso_inmueble}}" hidden>Uso del Inmueble</option>
+                                        <option value="Residencial">Residencial</option>
+                                        <option value="Comercial">Comercial</option>
+                                        <option value="Terreno baldio">Terreno Baldio</option>+
                                     </select>
                                 </div>
                             </div>
@@ -100,9 +101,8 @@
                                     <label for="cuota_mantenimiento">Cuota de Mantenimiento</label>
                                     <input class="form-control" id="cuota_mantenimiento" name="cuota_mantenimiento" type="number" placeholder="Cuota de Mantenimiento" min="0" value="{{objin.cuota_mantenimiento}}" required>
                                 </div>
-                                <div class="col-md-6 mb-3 " >                                    
-                                    <label class="form-check-label" for="op_compra">En Renta con opción a Venta</label>
-                                    <input class="form-check-input" type="checkbox" id="op_compra" name="op_compra">
+                                <div class="col-md-6 mb-3 " id="$op_compra">                                    
+                                    <label class="form-check-label" for="op_compra">En Renta con Opción a Venta</label>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +150,7 @@
                         </div>
                         <div class="col-md-6 mb-4">
                             <label for="referencias" class="h6 mb-2">Referencias</label>
-                            <textarea class="form-control" placeholder="Referencias" id="referencias" name="referencias" value="{{objin.refencias}}" rows="5"></textarea>
+                            <textarea class="form-control" id="referencias" placeholder="Referencias" nameplaceholder="Referencias" id="referencias" name="referencias" value="{{objin.referencias}}" rows="5">{{objin.referencias}}</textarea>
                         </div>
                         <h2 class="h5 mb-2">Características del Inmueble</h2>
 
@@ -189,80 +189,61 @@
                        <div class="col-md-6 mb-2 ">
                             <div class="row">
                                 <h2 class="h5 mb-2">Amenidades</h2>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="garaje" name="garaje" value="{{objin.garaje}}">
-                                    <label class="form-check-label" for="garaje">Garage</label>
+                                <div class="col-md-4" id="$garaje">
+                                    <label class="form-check-label" for="garaje">Garaje</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="terraza" name="terraza" value="{{objin.terraza}}">
+                                <div class="col-md-4" id="$terraza">
                                     <label class="form-check-label" for="terraza">Terraza</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="alberca" name="alberca" value="{{objin.alberca}}">
+                                <div class="col-md-4" id="$alberca" >
                                     <label class="form-check-label" for="alberca">Alberca</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="cocina" name="cocina" value="{{objin.cocina}}">
+                                <div class="col-md-4" id="$cocina">
                                     <label class="form-check-label" for="cocina">Cocina</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="amueblado" name="amueblado" value="{{objin.amueblado}}">
+                                <div class="col-md-4" id="$amueblado">
                                     <label class="form-check-label" for="amueblado">Amueblado</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="cuarto_lavado" name="cuarto_lavado" value="{{objin.cuarto_lavado}}">
+                                <div class="col-md-4" id="$cuarto_lavado" >
                                     <label class="form-check-label" for="cuarto_lavado">Cuarto de Lavado</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="mascotas" name="mascotas" value="{{objin.mascotas}}">
+                                <div class="col-md-4" id="$mascotas" >
                                     <label class="form-check-label" for="mascotas">Mascotas</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="gym" name="gym" value="{{objin.gym}}">
+                                <div class="col-md-4" id="$gym">
                                     <label class="form-check-label" for="gym">Gym</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="bar" name="bar" value="{{objin.bar}}">
+                                <div class="col-md-4" id="$bar">
                                     <label class="form-check-label" for="bar">Bar</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="restaurante_bar" name="restaurante_bar" value="{{objin.restaurante_bar}}">
+                                <div class="col-md-4" id="$restaurante_bar" >
                                     <label class="form-check-label" for="restaurante_bar">Restaurante Bar</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="sala_cine" name="sala_cine" value="{{objin.sala_cine}}">
+                                <div class="col-md-4" id="$sala_cine" >
                                     <label class="form-check-label" for="sala_cine">Sala de Cine</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="salon_estudio" name="salon_estudio" value="{{objin.salon_estudio}}">
+                                <div class="col-md-4" id="$salon_estudio">
                                     <label class="form-check-label" for="salon_estudio">Cuarto de Estudios</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="area_comun" name="area_comun" value="{{objin.area_comun}}">
-                                    <label class="form-check-label" for="area_comun">Área comun</label>
+                                <div class="col-md-4" id="$area_comun">
+                                    <label class="form-check-label" for="area_comun">Área Común</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="sala_juegos" name="sala_juegos" value="{{objin.sala_juegos}}">
+                                <div class="col-md-4" id="$sala_juegos">
                                     <label class="form-check-label" for="sala_juegos">Sala de Juegos</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="salon_eventos" name="salon_eventos" value="{{objin.salon_eventos}}">
+                                <div class="col-md-4" id="$salon_eventos">
                                     <label class="form-check-label" for="salon_eventos">Salón de Eventos</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="espacio_deportivo" name="espacio_deportivo" value="{{objin.espacio_deportivo}}">
+                                <div class="col-md-4" id="$espacio_deportivo">
                                     <label class="form-check-label" for="espacio_deportivo">Canchas Deportivas</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="busniess_center" name="busniess_center" value="{{objin.busniess_center}}">
+                                <div class="col-md-4" id="$busniess_center">
                                     <label class="form-check-label" for="busniess_center">Business Center</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="roof_garden" name="roof_garden" value="{{objin.roof_garden}}">
+                                <div class="col-md-4" id="$roof_garden">
                                     <label class="form-check-label" for="roof_garden">Roof Garden</label>
                                 </div>
-                                <div class="col-md-4" >
-                                    <input class="form-check-input" type="checkbox" id="otroA" name="otroA" title="Especifique en la descripción" data-bs-toggle="tooltip" data-bs-placement="right" value="{{objin.otroA}}">
+                                <div class="col-md-4" id="$otroA">
                                     <label class="form-check-label" for="otroA" >Otro</label>
                                 </div>
                             </div>
@@ -270,48 +251,37 @@
                         <div class="col-md-6 mb-2 ">
                             <div class="row">
                                 <h2 class="h5 mb-2">Servicios</h2>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="internet" name="internet" value="{{objin.internet}}">
+                                <div class="col-md-4" id="$internet">
                                     <label class="form-check-label" for="internet">Internet/Wifi</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="electricidad" name="electricidad" value="{{objin.electricidad}}">
+                                <div class="col-md-4" id="$electricidad">
                                     <label class="form-check-label" for="electricidad">Energía Eléctrica</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="agua_potable" name="agua_potable" value="{{objin.agua_potable}}">
+                                <div class="col-md-4" id="$agua_potable">
                                     <label class="form-check-label" for="agua_potable">Agua Potable</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="televisionCable" name="televisionCable" value="{{objin.televisionCable}}">
+                                <div class="col-md-4" id="$televisionCable">
                                     <label class="form-check-label" for="televisionCable">Tele por Cable</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="gas" name="gas" value="{{objin.gas}}">
+                                <div class="col-md-4" id="$gas" >
                                     <label class="form-check-label" for="gas">Gas</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="lineaTelefonica" name="lineaTelefonica" value="{{objin.lineaTelefonica}}">
+                                <div class="col-md-4" id="$lineaTelefonica" >
                                     <label class="form-check-label" for="lineaTelefonica">Línea Telefónica</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="drenaje" name="garaje" value="{{objin.garaje}}">
+                                <div class="col-md-4" id="$drenaje">
                                     <label class="form-check-label" for="drenaje">Drenaje</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="seguridad" name="seguridad" value="{{objin.seguridad}}">
+                                <div class="col-md-4" id="$seguridad">
                                     <label class="form-check-label" for="seguridad">Seguridad</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="camarasSeguridad" name="camarasSeguridad" value="{{objin.camarasSeguridad}}">
+                                <div class="col-md-4" id="$camarasSeguridad">
                                     <label class="form-check-label" for="camarasSeguridad">Circuito Cerrado</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <input class="form-check-input" type="checkbox" id="area_juegos" name="area_juegos" value="{{objin.area_juegos}}">
-                                    <label class="form-check-label" for="a_juegos">Área de juegos</label>
+                                <div class="col-md-4" id="$area_juegos" >
+                                    <label class="form-check-label" for="area_juegos">Área de Juegos</label>
                                 </div>
-                                <div class="col-md-4" >
-                                    <input class="form-check-input" type="checkbox" id="otroS" name="otroS" title="Especifique en la descripción" data-bs-toggle="tooltip" data-bs-placement="right" value="{{objin.otroS}}">
+                                <div class="col-md-4" id="$otroS" >
                                     <label class="form-check-label" for="otroS" >Otro</label>
                                 </div>
                             </div>
@@ -357,6 +327,33 @@
           document.getElementById("OSPF").style.display = "block";
         }
       }    
+</script>
+<script>
+    const $checks = ["$garaje","$terraza","$alberca","$cocina","$amueblado","$cuarto_lavado","$mascotas","$gym","$bar","$restaurante_bar","$sala_cine","$salon_estudio","$area_comun","$sala_juegos","$salon_eventos","$espacio_deportivo","$busniess_center","$roof_garden","$otroA","$internet","$electricidad","$agua_potable","$televisionCable","$gas","$lineaTelefonica","$drenaje","$seguridad","$camarasSeguridad","$area_juegos","$otroS","$op_compra"];
+    const checks = ["garaje","terraza","alberca","cocina","amueblado","cuarto_lavado","mascotas","gym","bar","restaurante_bar","sala_cine","salon_estudio","area_comun","sala_juegos","salon_eventos","espacio_deportivo","busniess_center","roof_garden","otroA","internet","electricidad","agua_potable","televisionCable","gas","lineaTelefonica","drenaje","seguridad","camarasSeguridad","area_juegos","otroS","op_compra"];
+
+const valores=['{{objin.garaje}}','{{objin.terraza}}','{{objin.alberca}}','{{objin.cocina}}','{{objin.amueblado}}','{{objin.cuarto_lavado}}','{{objin.mascotas}}','{{objin.gym}}','{{objin.bar}}','{{objin.restaurante_bar}}','{{objin.sala_cine}}','{{objin.salon_estudio}}','{{objin.area_comun}}','{{objin.sala_juegos}}','{{objin.salon_eventos}}','{{objin.espacio_deportivo}}','{{objin.busniess_center}}','{{objin.roof_garden}}','{{objin.otroA}}','{{objin.internet}}','{{objin.electricidad}}','{{objin.agua_potable}}','{{objin.televisionCable}}','{{objin.gas}}','{{objin.lineaTelefonica}}','{{objin.drenaje}}','{{objin.seguridad}}','{{objin.camarasSeguridad}}','{{objin.area_juegos}}','{{objin.otroS}}','{{objin.op_compra}}'];
+const AyS = checks.map(function(x){
+    x = document.createElement("input");
+    x.setAttribute("class","form-check-input");
+    x.setAttribute("type","checkbox");
+    return x;
+});
+const $inputc = $checks.map(function(x){
+    let y=document.getElementById(x);
+    return y;}
+);
+console.log(AyS);
+console.log($inputc);
+for(var i=0;i<valores.length;i++){
+    AyS[i].setAttribute("id",checks[i]);
+    AyS[i].setAttribute("name",checks[i]);
+    if(valores[i]=='on'){
+        AyS[i].setAttribute("checked","");
+        $inputc[i].prepend(AyS[i]);
+    }else if(valores[i]!='on'){
+        $inputc[i].prepend(AyS[i]);}
+};
 </script>
 
 {% endblock javascripts %}

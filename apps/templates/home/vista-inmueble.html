@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-md-6 mb-2">
                     <div class="col-md-12 mb-3">
-                        <label for="n-p-a">Nombre del Propietario Administrador</label>
+                        <label for="n-p-a">Administrador</label>
                         <input type="text" id="d-c-a" class="form-control" placeholder="Jhon Cleant" disabled>
                     </div>
                     <div class="col-md-12 mb-3">
@@ -102,11 +102,11 @@
                                 <label for="venta">Venta</label>
                                 <input class="form-control" id="venta" name="venta" min="0" type="number" value="{{verinmueble.venta}}" disabled>
                             </div>
-                            <div class="col-md-6 mb-5">
+                            <div class="col-md-6 mb-3">
                                 <label for="v_inmueble">Valor del Inmueble</label>
                                 <input class="form-control" id="v_inmueble" name="v_inmueble" min="0" type="number" value="{{verinmueble.valor_inmueble}}" disabled>
                             </div>
-                            <div class="col-md-6 mb-5">
+                            <div class="col-md-6 mb-3">
                                 <label for="manteniniento">Cuota de Mantenimiento</label>
                                 <input class="form-control" id="mantenimiento" name="mantenimiento" type="number" value="{{verinmueble.cuota_mantenimiento}}" min="0" disabled>
                             </div>                            
@@ -144,8 +144,6 @@
                         <label for="c_año">Año de Construcción</label>
                         <input class="form-control" id="c_año" name="c_año" type="number" value="{{verinmueble.año_contruccion}}" min="0" maxlength="4" disabled>
                     </div>
-                
-                <a><button type="text" class="btn btn-secondary mb-4" >Breve Descripción del Inmueble</button></a>
                 <div class="col-md-6 mb-2 ">
                     <div class="row">
                         <h2 class="h5 mb-2">Amenidades</h2>
@@ -337,7 +335,7 @@
         x.setAttribute("disabled","");
         return x;
     });
-    console.log(valores);
+    console.log(AyS);
     const $inputc = checks.map(function(x){
         let y=document.getElementById(x);
         return y;}

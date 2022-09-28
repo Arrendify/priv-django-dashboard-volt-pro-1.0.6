@@ -15,7 +15,7 @@
                     Registar Nuevo Inmueble
                 </button>
                 <div class="dropdown-menu dashboard-dropdown dropdown-menu-start mt-2 py-1">
-                    <a href="/tabla-inmuebles.html" class="dropdown-item d-flex align-items-center" href="#">
+                    <a href="/listarinmuebles" class="dropdown-item d-flex align-items-center" href="#">
                         <svg class="dropdown-icon text-gray-400 me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6 12v-2h3v2H6z" clip-rule="evenodd"></path><path fill-rule="evenodd" d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM3 9h10v1h-3v2h3v1h-3v2H9v-2H6v2H5v-2H3v-1h2v-2H3V9z" clip-rule="evenodd"></path></svg>
                         Modulo Vista General de Inmueble
                     </a>
@@ -86,22 +86,22 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="renta">Renta</label>
-                                    <input class="form-control" id="renta" name="renta" type="number" placeholder="Ingresa la Renta" min="0" required>
+                                    <input class="form-control" id="renta" name="renta" type="number" placeholder="Ingresa el Valor de la Renta" min="0" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="venta">Venta</label>
-                                    <input class="form-control" id="venta" name="venta" min="0" type="number" placeholder="Ingresa la el valor de venta" required>
+                                    <input class="form-control" id="venta" name="venta" min="0" type="number" placeholder="Ingresa el Valor de Venta" required>
                                 </div>
                                 <div class="col-md-6 mb-5">
                                     <label for="valor_inmueble">Valor del Inmueble</label>
-                                    <input class="form-control" id="valor_inmueble" name="valor_inmueble" min="0" type="number" placeholder="Ingresa Valor del Inmueble" required>
+                                    <input class="form-control" id="valor_inmueble" name="valor_inmueble" min="0" type="number" placeholder="Ingresa el Valor del Inmueble" required>
                                 </div>
                                 <div class="col-md-6 mb-5">
                                     <label for="cuota_mantenimiento">Cuota de Mantenimiento</label>
                                     <input class="form-control" id="cuota_mantenimiento" name="cuota_mantenimiento" type="number" placeholder="Cuota de Mantenimiento" min="0" required>
                                 </div>
                                 <div class="col-md-6 mb-3 " >                                    
-                                    <label class="form-check-label" for="op_compra">En Renta con opción a Venta</label>
+                                    <label class="form-check-label" for="op_compra">En Renta con Opción a Venta</label>
                                     <input class="form-check-input" type="checkbox" id="op_compra" name="op_compra">
                                 </div>
                             </div>
@@ -144,12 +144,12 @@
                                 <input class="form-control" id="calle1" name="calle1" type="text" placeholder="Calle 1" required>
                             </div>
                             <div class="col-md-12 mb-2">
-                                <label for="calle2">Calle 2</label>
+                                <label for="calle2">Calle 2 (Opcional)</label>
                                 <input class="form-control" id="calle2" name="calle2" type="text" placeholder="Calle 2" >
                             </div>
                         </div>
                         <div class="col-md-6 mb-4">
-                            <label for="referencias" class="h6 mb-2">Referencias</label>
+                            <label for="referencias" class="h6 mb-2">Referencias (Opcional)</label>
                             <textarea class="form-control" placeholder="Referencias" id="referencias" name="referencias" rows="5"></textarea>
                         </div>
                         <h2 class="h5 mb-2">Características del Inmueble</h2>
@@ -191,7 +191,7 @@
                                 <h2 class="h5 mb-2">Amenidades</h2>
                                 <div class="col-md-4">
                                     <input class="form-check-input" type="checkbox" id="garaje" name="garaje">
-                                    <label class="form-check-label" for="garaje">Garage</label>
+                                    <label class="form-check-label" for="garaje">Garaje</label>
                                 </div>
                                 <div class="col-md-4">
                                     <input class="form-check-input" type="checkbox" id="terraza" name="terraza">
@@ -239,7 +239,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <input class="form-check-input" type="checkbox" id="area_comun" name="area_comun">
-                                    <label class="form-check-label" for="area_comun">Área comun</label>
+                                    <label class="form-check-label" for="area_comun">Área Común</label>
                                 </div>
                                 <div class="col-md-4">
                                     <input class="form-check-input" type="checkbox" id="sala_juegos" name="sala_juegos">
@@ -308,7 +308,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <input class="form-check-input" type="checkbox" id="area_juegos" name="area_juegos">
-                                    <label class="form-check-label" for="area_juegos">Área de juegos</label>
+                                    <label class="form-check-label" for="area_juegos">Área de Juegos</label>
                                 </div>
                                 <div class="col-md-4" >
                                     <input class="form-check-input" type="checkbox" id="otroS" name="otroS" title="Especifique en la descripción" data-bs-toggle="tooltip" data-bs-placement="right" >
@@ -321,7 +321,7 @@
                             <textarea class="form-control" placeholder="Descripción" id="descripcion" name="descripcion" rows="4"></textarea>
                         </div>
                         <div class="col-md-6 mb-4">
-                            <label for="fotosInmueble" class="h5 mb-2">Link de Fotos y video</label>
+                            <label for="fotosInmueble" class="h5 mb-2">Link de Fotos y Video</label>
                             <input class="form-control" id="fotosInmueble" name="fotosInmueble" placeholder="Link de Fotos y Video" >
                         </div>
                     </div>
@@ -334,7 +334,6 @@
                             <input class="btn btn-success btn-block" id="confirmarBTN" type="submit" value="Guardar"/>
                         </div>
                     </div>
-                
             </form>                                                                        
         </div>
     </div>
